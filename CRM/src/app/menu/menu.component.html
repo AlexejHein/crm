@@ -1,0 +1,24 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <mat-icon class="logo">data_exploration</mat-icon>
+    <ul>
+      <li><a class="link-style" href=""><mat-icon>bar_chart_4_bars</mat-icon>Dashboard</a></li>
+      <li><a class="link-style" href=""><mat-icon>person</mat-icon>User</a> </li>
+      <li><a class="link-style" href=""><mat-icon>group</mat-icon>Group</a></li>
+      <li><a class="link-style" href=""><mat-icon>folder</mat-icon>Folder</a></li>
+      <li><a class="link-style" href=""><mat-icon>insert_drive_file</mat-icon>File</a></li>
+      <li><a class="link-style" href=""><mat-icon>settings</mat-icon>Settings</a></li>
+      <li><a class="link-style" href=""><mat-icon>exit_to_app</mat-icon>Logout</a></li>
+
+    </ul>
+
+  </mat-drawer>
+
+  <mat-toolbar color="primary">
+    <button type="button" mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+
+</mat-drawer-container>

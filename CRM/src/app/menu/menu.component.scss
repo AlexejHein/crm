@@ -1,0 +1,94 @@
+.sidenav{
+  width: 250px;
+  background-color: #fff;
+  color: #424242;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  //border-right: 1px solid #ccc;
+  height: 100vh;
+  //box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+  .logo{
+    width: 100%;
+    height: 40px;
+    font-size: 38px;
+    text-align: center;
+  }
+  ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    li{
+      width: 100%;
+      text-align: center;
+      padding-right: 0;
+      text-shadow: none!important;
+      box-shadow: none!important;
+      a {
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        color: #424242;
+        gap: 10px;
+        border-radius: 25px 0 0 25px;
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+      }
+
+      a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background-color: #424242;
+        color: #fff;
+        transition: all 0.2s ease-in-out;
+        border-radius: 25px 0 0 25px;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      a:hover::before {
+        left: 0;
+      }
+
+      a.active::before {
+        left: 0;
+      }
+
+      a:hover {
+        color: #fff;
+      }
+
+      a.active {
+        color: #fff;
+      }
+
+
+
+    }
+  }
+  &.close{
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+.mat-drawer-side{
+  border-right: 0;
+}
