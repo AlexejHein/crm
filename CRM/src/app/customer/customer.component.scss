@@ -1,0 +1,39 @@
+.add-customer-btn{
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+}
+mat-card{
+  margin: 16px;
+  padding: 16px;
+}
+.user-table{
+  width: 100%;
+  border-collapse: collapse;
+  tr{
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    &:first-child{
+      cursor: unset;
+      &:hover{
+        background-color: unset;
+      }
+    }
+    &:last-child{
+      border-bottom: none;
+    }
+    cursor: pointer;
+    &:hover{
+      background-color: rgba(0,0,0,0.04);
+    }
+  }
+  th{
+    color: rgba(0,0,0,0.54);
+    font-weight: 500;
+    font-size: 14px;
+    text-align: left;
+  }
+  td{
+    color: #ffffff;
+    height: 48px;
+  }
+}

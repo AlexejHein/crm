@@ -6,11 +6,12 @@
   z-index: 1;
   top: 0;
   left: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   padding-top: 20px;
   //border-right: 1px solid #ccc;
   height: 100vh;
   //box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+
   .logo{
     width: 100%;
     height: 40px;
@@ -25,6 +26,7 @@
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
+    overflow: hidden;
     li{
       width: 100%;
       text-align: center;
@@ -41,8 +43,8 @@
         gap: 10px;
         border-radius: 25px 0 0 25px;
         width: 100%;
-        margin: 10px;
-        padding: 10px;
+        margin: 10px 0  10px 10px;
+        padding: 10px 30px;
         cursor: pointer;
         position: relative;
         z-index: 1;
@@ -57,7 +59,7 @@
         height: 100%;
         background-color: #424242;
         color: #fff;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s ease-in-out;
         border-radius: 25px 0 0 25px;
         pointer-events: none;
         z-index: -1;

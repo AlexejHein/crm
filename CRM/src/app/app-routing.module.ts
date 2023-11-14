@@ -10,6 +10,7 @@ import {HistoryComponent} from "./history/history.component";
 import {SalesComponent} from "./sales/sales.component";
 import {TaskComponent} from "./task/task.component";
 import {MarketingComponent} from "./marketing/marketing.component";
+import {CustomerDetailComponent} from "./customer-detail/customer-detail.component";
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'marketing', canActivate: [AuthGuard],
     component: MarketingComponent
+  },
+  {
+    path: 'customer/:id', canActivate: [AuthGuard],
+    component: CustomerDetailComponent
   }
 ];
 

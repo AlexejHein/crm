@@ -31,6 +31,12 @@ import { MatDatepickerModule} from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressBarModule} from "@angular/material/progress-bar";
 import { MatTooltipModule} from "@angular/material/tooltip";
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
+import { DialogEditCustomerComponent } from './dialog-edit-customer/dialog-edit-customer.component';
+import {MatMenuModule} from "@angular/material/menu";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -44,7 +50,10 @@ import { MatTooltipModule} from "@angular/material/tooltip";
     HistoryComponent,
     TaskComponent,
     MarketingComponent,
-    DialogAddCostumerComponent
+    DialogAddCostumerComponent,
+    CustomerDetailComponent,
+    DialogEditAddressComponent,
+    DialogEditCustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +73,10 @@ import { MatTooltipModule} from "@angular/material/tooltip";
     MatDatepickerModule,
     MatProgressBarModule,
     MatTooltipModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

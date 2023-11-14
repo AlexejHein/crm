@@ -1,0 +1,21 @@
+<app-menu></app-menu>
+<mat-card>
+  <table class="user-table">
+    <tr>
+      <th>Name</th>
+      <th>E-Mail</th>
+      <th>City</th>
+    </tr>
+    <tr *ngFor="let customer of allCustomers" [routerLink]="['/customer/' + customer['customIdName']]">
+      <td>{{customer["lastName"]}} {{ customer["firstName"] }}</td>
+      <td>{{ customer["email"]}}</td>
+      <td>{{ customer["city"] }}</td>
+    </tr>
+
+
+
+  </table>
+</mat-card>
+<button (click)="openDialog()" class="add-customer-btn" mat-fab color="primary" matTooltip="Add User">
+  <mat-icon>add</mat-icon>
+</button>
