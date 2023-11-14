@@ -15,16 +15,22 @@ import { MatButtonModule} from "@angular/material/button";
 import { MatIconModule} from "@angular/material/icon";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard} from "./services/routeguard.service";
-import {AuthService} from "./services/auth.service";
+import { AuthService} from "./services/auth.service";
 import { MenuComponent } from './menu/menu.component';
-import {MatSidenavModule} from "@angular/material/sidenav";
-import {MatToolbarModule} from "@angular/material/toolbar";
+import { MatSidenavModule} from "@angular/material/sidenav";
+import { MatToolbarModule} from "@angular/material/toolbar";
 import { CustomerComponent } from './customer/customer.component';
 import { ManagementComponent } from './management/management.component';
 import { SalesComponent } from './sales/sales.component';
 import { HistoryComponent } from './history/history.component';
 import { TaskComponent } from './task/task.component';
 import { MarketingComponent } from './marketing/marketing.component';
+import { DialogAddCostumerComponent } from './dialog-add-costumer/dialog-add-costumer.component';
+import { MatDialogModule} from "@angular/material/dialog";
+import { MatDatepickerModule} from "@angular/material/datepicker";
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatProgressBarModule} from "@angular/material/progress-bar";
+import { MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -37,7 +43,8 @@ import { MarketingComponent } from './marketing/marketing.component';
     SalesComponent,
     HistoryComponent,
     TaskComponent,
-    MarketingComponent
+    MarketingComponent,
+    DialogAddCostumerComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +60,11 @@ import { MarketingComponent } from './marketing/marketing.component';
     FormsModule,
     MatSidenavModule,
     MatToolbarModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatProgressBarModule,
+    MatTooltipModule,
+    MatNativeDateModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
