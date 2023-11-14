@@ -17,7 +17,7 @@ export class LoginComponent {
   login() {
     this.authService.login(this.email, this.password)
       .then(res => {
-        this.router.navigate(['/dashboard']).then(r => console.log(r));
+        this.router.navigate(['/menu']).then(r => console.log(r));
         console.log('Erfolgreich eingelogt!', res);
       })
       .catch(err => {

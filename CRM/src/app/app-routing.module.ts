@@ -3,14 +3,49 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AuthGuard } from "./services/routeguard.service";
+import {CustomerComponent} from "./customer/customer.component";
+import {MenuComponent} from "./menu/menu.component";
+import {ManagementComponent} from "./management/management.component";
+import {HistoryComponent} from "./history/history.component";
+import {SalesComponent} from "./sales/sales.component";
+import {TaskComponent} from "./task/task.component";
+import {MarketingComponent} from "./marketing/marketing.component";
 
 const routes: Routes = [
   {
     path:'', component: LoginComponent
   },
   {
+    path: 'menu', canActivate: [AuthGuard],
+    component: MenuComponent
+  },
+  {
     path: 'dashboard', canActivate: [AuthGuard],
     component: DashboardComponent
+  },
+  {
+    path: 'customer', canActivate: [AuthGuard],
+    component: CustomerComponent
+  },
+  {
+    path: 'management', canActivate: [AuthGuard],
+    component: ManagementComponent
+  },
+  {
+    path: 'history', canActivate: [AuthGuard],
+    component: HistoryComponent
+  },
+  {
+    path: 'sales', canActivate: [AuthGuard],
+    component: SalesComponent
+  },
+  {
+    path: 'task', canActivate: [AuthGuard],
+    component: TaskComponent
+  },
+  {
+    path: 'marketing', canActivate: [AuthGuard],
+    component: MarketingComponent
   }
 ];
 

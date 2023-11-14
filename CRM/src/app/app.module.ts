@@ -19,13 +19,25 @@ import {AuthService} from "./services/auth.service";
 import { MenuComponent } from './menu/menu.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { CustomerComponent } from './customer/customer.component';
+import { ManagementComponent } from './management/management.component';
+import { SalesComponent } from './sales/sales.component';
+import { HistoryComponent } from './history/history.component';
+import { TaskComponent } from './task/task.component';
+import { MarketingComponent } from './marketing/marketing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    MenuComponent
+    MenuComponent,
+    CustomerComponent,
+    ManagementComponent,
+    SalesComponent,
+    HistoryComponent,
+    TaskComponent,
+    MarketingComponent
   ],
   imports: [
     BrowserModule,
