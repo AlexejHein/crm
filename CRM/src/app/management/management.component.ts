@@ -2,6 +2,9 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {PeriodicElement} from "../models/leads.class";
+import {DialogAddLeadComponent} from "./dialog-add-lead/dialog-add-lead.component";
+import { MatDialogRef} from "@angular/material/dialog";
+import {MatDialog} from "@angular/material/dialog";
 
 
 @Component({
@@ -18,7 +21,11 @@ export class ManagementComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator as MatPaginator;
   }
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
+
+  open() {
+    this.dialog.open(DialogAddLeadComponent)
+  }
 
 }
 

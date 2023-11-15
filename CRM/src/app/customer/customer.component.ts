@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog} from "@angular/material/dialog";
-import {DialogAddCostumerComponent} from "../dialog-add-costumer/dialog-add-costumer.component";
+import {DialogAddCostumerComponent} from "./dialog-add-costumer/dialog-add-costumer.component";
 import { Customer } from "../models/customers.class";
 import firebase from "firebase/compat";
 import firestore = firebase.firestore;

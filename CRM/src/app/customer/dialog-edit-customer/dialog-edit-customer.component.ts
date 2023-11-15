@@ -1,25 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import {Customer} from "../models/customers.class";
+import {Component, OnInit} from '@angular/core';
+import {Customer} from "../../models/customers.class";
 import {MatDialogRef} from "@angular/material/dialog";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {doc} from "@angular/fire/firestore";
 
 @Component({
-  selector: 'app-dialog-edit-address',
-  templateUrl: './dialog-edit-address.component.html',
-  styleUrls: ['./dialog-edit-address.component.scss']
+  selector: 'app-dialog-edit-user',
+  templateUrl: './dialog-edit-customer.component.html',
+  styleUrls: ['./dialog-edit-customer.component.scss']
 })
-export class DialogEditAddressComponent implements OnInit{
+export class DialogEditCustomerComponent implements OnInit{
 
   customer: Customer = new Customer();
   loading = false;
   customerId :string = '';
 
 
-
-  constructor(public dialogRef: MatDialogRef<DialogEditAddressComponent>, private firestore: AngularFirestore) {
+  constructor(public dialogRef: MatDialogRef<DialogEditCustomerComponent>,private firestore: AngularFirestore) {
   }
-
 
   ngOnInit(): void {
 

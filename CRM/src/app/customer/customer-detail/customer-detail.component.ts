@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {Customer} from "../models/customers.class";
+import {Customer} from "../../models/customers.class";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogEditAddressComponent} from "../dialog-edit-address/dialog-edit-address.component";
 import {DialogEditCustomerComponent} from "../dialog-edit-customer/dialog-edit-customer.component";

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Customer} from "../models/customers.class";
+import { Customer} from "../../models/customers.class";
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialogRef } from "@angular/material/dialog";
 

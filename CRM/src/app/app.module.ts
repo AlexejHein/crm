@@ -25,18 +25,20 @@ import { SalesComponent } from './sales/sales.component';
 import { HistoryComponent } from './history/history.component';
 import { TaskComponent } from './task/task.component';
 import { MarketingComponent } from './marketing/marketing.component';
-import { DialogAddCostumerComponent } from './dialog-add-costumer/dialog-add-costumer.component';
+import { DialogAddCostumerComponent } from './customer/dialog-add-costumer/dialog-add-costumer.component';
 import { MatDialogModule} from "@angular/material/dialog";
 import { MatDatepickerModule} from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressBarModule} from "@angular/material/progress-bar";
 import { MatTooltipModule} from "@angular/material/tooltip";
-import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
-import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
-import { DialogEditCustomerComponent } from './dialog-edit-customer/dialog-edit-customer.component';
+import { CustomerDetailComponent } from './customer/customer-detail/customer-detail.component';
+import { DialogEditAddressComponent } from './customer/dialog-edit-address/dialog-edit-address.component';
+import { DialogEditCustomerComponent } from './customer/dialog-edit-customer/dialog-edit-customer.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { DialogAddLeadComponent } from './management/dialog-add-lead/dialog-add-lead.component';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     DialogAddCostumerComponent,
     CustomerDetailComponent,
     DialogEditAddressComponent,
-    DialogEditCustomerComponent
+    DialogEditCustomerComponent,
+    DialogAddLeadComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatNativeDateModule,
     MatMenuModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
