@@ -54,7 +54,7 @@
       <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td mat-cell *matCellDef="let element"> {{element.actions}}
         <button class="mr-16" mat-mini-fab color="accent"><mat-icon>edit</mat-icon></button>
-        <button mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+        <button mat-mini-fab color="warn" (click)="deleteLead(element.id)" ><mat-icon>delete</mat-icon></button>
       </td>
     </ng-container>
 

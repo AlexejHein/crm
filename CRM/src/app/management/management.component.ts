@@ -39,4 +39,15 @@ export class ManagementComponent implements AfterViewInit, OnInit {
   open() {
     this.dialog.open(DialogAddLeadComponent);
   }
+  deleteLead(leadId: string) {
+    this.leadService.deleteLead(leadId).subscribe(() => {
+      this.refreshTable();
+    });
+  }
+
+  refreshTable() {
+    this.leadService.getLeads().subscribe((data: Lead[]) => {
+      this.dataSource.data = data;
+    });
+  }
 }

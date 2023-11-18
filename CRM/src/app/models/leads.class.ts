@@ -1,5 +1,5 @@
 export class Lead {
-  createdAt: number;
+  createdAt: string;
   assignedTo: string;
   firstName: string;
   lastName: string;
