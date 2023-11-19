@@ -39,6 +39,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import { DialogAddLeadComponent } from './management/dialog-add-lead/dialog-add-lead.component';
 import {MatSelectModule} from "@angular/material/select";
+import { DialogEditLeadComponent } from './management/dialog-edit-lead/dialog-edit-lead.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import {MatSelectModule} from "@angular/material/select";
     CustomerDetailComponent,
     DialogEditAddressComponent,
     DialogEditCustomerComponent,
-    DialogAddLeadComponent
+    DialogAddLeadComponent,
+    DialogEditLeadComponent
   ],
   imports: [
     BrowserModule,

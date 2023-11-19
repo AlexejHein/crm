@@ -8,6 +8,7 @@ export class Lead {
   companyName: string;
   updatedAt: string;
   actions?: string;
+  comments?: string;
 
   constructor( obj?: any) {
     this.createdAt = obj ? obj.createdAt : '';
@@ -18,6 +19,7 @@ export class Lead {
     this.phoneNumber = obj ? obj.phoneNumber : '';
     this.companyName = obj ? obj.companyName : '';
     this.updatedAt = obj ? obj.updatedAt : '';
+    this.comments = obj ? obj.comments : '';
     this.actions = obj ? obj.actions : '';
   }
 
@@ -31,6 +33,7 @@ export class Lead {
       phoneNumber: this.phoneNumber,
       companyName: this.companyName,
       updatedAt: this.updatedAt,
+      comments: this.comments,
       actions: this.actions
     }
   }

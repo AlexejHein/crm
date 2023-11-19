@@ -11,6 +11,7 @@ import {SalesComponent} from "./sales/sales.component";
 import {TaskComponent} from "./task/task.component";
 import {MarketingComponent} from "./marketing/marketing.component";
 import {CustomerDetailComponent} from "./customer/customer-detail/customer-detail.component";
+import {DialogEditLeadComponent} from "./management/dialog-edit-lead/dialog-edit-lead.component";
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'customer/:id', canActivate: [AuthGuard],
     component: CustomerDetailComponent
+  },
+  {
+    path: 'management/:id', canActivate: [AuthGuard],
+    component: DialogEditLeadComponent
   }
 ];
 
