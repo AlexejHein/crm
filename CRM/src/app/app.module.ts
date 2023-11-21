@@ -42,6 +42,7 @@ import {MatSelectModule} from "@angular/material/select";
 import { DialogEditLeadComponent } from './management/dialog-edit-lead/dialog-edit-lead.component';
 import { AddProductComponent } from './sales/add-product/add-product.component';
 import {MatListModule} from "@angular/material/list";
+import { ProductDetailComponent } from './sales/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {MatListModule} from "@angular/material/list";
     DialogEditCustomerComponent,
     DialogAddLeadComponent,
     DialogEditLeadComponent,
-    AddProductComponent
+    AddProductComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
