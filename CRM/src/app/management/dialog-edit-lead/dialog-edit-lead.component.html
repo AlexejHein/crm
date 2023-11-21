@@ -1,0 +1,76 @@
+<mat-card>
+    <mat-card-title> Lead </mat-card-title>
+  <br>
+    <mat-card-content>
+      <mat-form-field class="mr-16" appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input [(ngModel)]="lead.firstName" matInput placeholder="First Name">
+      </mat-form-field>
+      <mat-form-field class="mr-16" appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input [(ngModel)]="lead.lastName" matInput placeholder="Last Name">
+      </mat-form-field>
+      <mat-form-field class="mr-16" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input [(ngModel)]="lead.email" matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field class="mr-16" appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input [(ngModel)]="lead.phoneNumber" matInput placeholder="Phone">
+      </mat-form-field>
+      <mat-form-field appearance="outline"  class="width-100">
+        <mat-label>Info</mat-label>
+        <textarea matInput [(ngModel)]="lead.comments"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Lead Source</mat-label>
+        <mat-select [(ngModel)]="lead.source">
+          <mat-option value="websiteInquiries">Website Inquiries</mat-option>
+          <mat-option value="emailCampaigns">Email Campaigns</mat-option>
+          <mat-option value="socialMedia">Social Media</mat-option>
+          <mat-option value="referrals">Referrals</mat-option>
+          <mat-option value="networkingEvents">Networking Events</mat-option>
+          <mat-option value="coldCalls">Cold Calls</mat-option>
+          <mat-option value="paidAdvertising">Paid Advertising</mat-option>
+          <mat-option value="webinarsOnlineWorkshops">Webinars and Online Workshops</mat-option>
+          <mat-option value="directMailCampaigns">Direct Mail Campaigns</mat-option>
+          <mat-option value="organicSearch">Organic Search</mat-option>
+          <mat-option value="partnerChannels">Partner Channels</mat-option>
+          <mat-option value="onlineDirectories">Online Directories</mat-option>
+          <mat-option value="printMedia">Print Media</mat-option>
+          <mat-option value="communityEngagement">Community Engagement</mat-option>
+          <mat-option value="customerServiceInteractions">Customer Service Interactions</mat-option>
+          <mat-option value="other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Lead Status</mat-label>
+        <mat-select [(ngModel)]="lead.status">
+          <mat-option value="new">New</mat-option>
+          <mat-option value="working">Working</mat-option>
+          <mat-option value="closed">Closed</mat-option>
+          <mat-option value="unqualified">Unqualified</mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Appointment scheduled</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="lead.appointmentDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button class="edit-btn" mat-mini-fab (click)="save()"><mat-icon>save</mat-icon> </button>
+    </mat-card-actions>
+</mat-card>
+
+<button class="back-btn" mat-mini-fab color="primary" routerLink="/management">
+    <mat-icon>arrow_back</mat-icon>
+</button>

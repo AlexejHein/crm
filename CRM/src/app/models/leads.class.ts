@@ -9,6 +9,9 @@ export class Lead {
   updatedAt: string;
   actions?: string;
   comments?: string;
+  status?: string;
+  source?: string;
+  appointmentDate?: string;
 
   constructor( obj?: any) {
     this.createdAt = obj ? obj.createdAt : '';
@@ -21,6 +24,9 @@ export class Lead {
     this.updatedAt = obj ? obj.updatedAt : '';
     this.comments = obj ? obj.comments : '';
     this.actions = obj ? obj.actions : '';
+    this.status = obj ? obj.status : '';
+    this.source = obj ? obj.source : '';
+    this.appointmentDate = obj ? obj.appointmentDate : '';
   }
 
   public toJSON(){
@@ -34,7 +40,10 @@ export class Lead {
       companyName: this.companyName,
       updatedAt: this.updatedAt,
       comments: this.comments,
-      actions: this.actions
+      actions: this.actions,
+      status: this.status,
+      source: this.source,
+      appointmentDate: this.appointmentDate
     }
   }
 }

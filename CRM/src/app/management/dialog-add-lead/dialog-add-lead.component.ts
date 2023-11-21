@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from "@angular/material/dialog";
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Lead } from '../../models/leads.class';
+import { Customer } from '../../models/customers.class';
 
 @Component({
   selector: 'app-dialog-add-lead',
@@ -11,6 +12,8 @@ import { Lead } from '../../models/leads.class';
 export class DialogAddLeadComponent implements OnInit {
 
   lead = new Lead();
+  customer = new Customer();
+  allCustomers: any[] = [];
 
   loading = false;
   currentDate:string;
@@ -22,6 +25,12 @@ export class DialogAddLeadComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.firestore.collection('customers')
+      .valueChanges({ idField: 'customIdName' })
+      .subscribe((changes: any) => {
+        this.allCustomers = changes;
+      });
+    console.log(this.allCustomers);
     setInterval(() => {
       this.currentDate = new Date().toLocaleString('de-DE', {
         year: 'numeric',

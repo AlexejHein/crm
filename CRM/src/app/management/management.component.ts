@@ -13,7 +13,7 @@ import { DialogAddLeadComponent } from "./dialog-add-lead/dialog-add-lead.compon
 })
 export class ManagementComponent implements AfterViewInit, OnInit {
 
-  displayedColumns: string[] = ['createdAt', 'assignedTo', 'firstName', 'lastName', 'email', 'phoneNumber', 'companyName', 'updatedAt', 'actions'];
+  displayedColumns: string[] = ['createdAt', 'assignedTo', 'name', 'email', 'phoneNumber', 'companyName', 'actions'];
   dataSource = new MatTableDataSource<Lead>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
@@ -50,4 +50,19 @@ export class ManagementComponent implements AfterViewInit, OnInit {
       this.dataSource.data = data;
     });
   }
+  getRowClass(lead: Lead) {
+    switch (lead.status) {
+      case 'new':
+        return '';
+      case 'working':
+        return 'status-working';
+      case 'closed':
+        return 'status-closed';
+      case 'unqualified':
+        return 'status-unqualified';
+      default:
+        return '';
+    }
+  }
+
 }

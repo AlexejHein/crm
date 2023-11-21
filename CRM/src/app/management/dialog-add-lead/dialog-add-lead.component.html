@@ -17,10 +17,9 @@
       <mat-form-field appearance="outline" class="width-100">
         <mat-label>Assigned To</mat-label>
         <mat-select [(ngModel)]="lead.assignedTo">
-          <mat-option value="Mr. Nice">Mr. Nice</mat-option>
-          <mat-option value="Dr. Nice">Dr. Nice</mat-option>
-          <mat-option value="Mrs. Nice">Mrs. Nice</mat-option>
-          <mat-option value="Ms. Nice">Ms. Nice</mat-option>
+          <mat-option *ngFor="let customer of allCustomers" [value]="customer.firstName + ' ' + customer.lastName">
+            {{ customer.firstName }} {{ customer.lastName }}
+          </mat-option>
         </mat-select>
       </mat-form-field>
     </div>
