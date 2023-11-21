@@ -28,7 +28,7 @@ import { MarketingComponent } from './marketing/marketing.component';
 import { DialogAddCostumerComponent } from './customer/dialog-add-costumer/dialog-add-costumer.component';
 import { MatDialogModule} from "@angular/material/dialog";
 import { MatDatepickerModule} from "@angular/material/datepicker";
-import { MatNativeDateModule } from '@angular/material/core';
+import {MatLineModule, MatNativeDateModule} from '@angular/material/core';
 import { MatProgressBarModule} from "@angular/material/progress-bar";
 import { MatTooltipModule} from "@angular/material/tooltip";
 import { CustomerDetailComponent } from './customer/customer-detail/customer-detail.component';
@@ -40,6 +40,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import { DialogAddLeadComponent } from './management/dialog-add-lead/dialog-add-lead.component';
 import {MatSelectModule} from "@angular/material/select";
 import { DialogEditLeadComponent } from './management/dialog-edit-lead/dialog-edit-lead.component';
+import { AddProductComponent } from './sales/add-product/add-product.component';
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { DialogEditLeadComponent } from './management/dialog-edit-lead/dialog-ed
     DialogEditAddressComponent,
     DialogEditCustomerComponent,
     DialogAddLeadComponent,
-    DialogEditLeadComponent
+    DialogEditLeadComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,9 @@ import { DialogEditLeadComponent } from './management/dialog-edit-lead/dialog-ed
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule,
+    MatLineModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

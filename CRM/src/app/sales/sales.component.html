@@ -18,4 +18,12 @@
     <p>A comprehensive solution for hosting virtual conferences, workshops, and events...</p>
   </mat-card>
 </div>
-
+<h2>Products</h2>
+<mat-card *ngFor="let product of allProducts" class="pd-16 m16 card">
+  <mat-card-title matLine>{{product.name}}</mat-card-title>
+  <mat-card-content>{{product.description}}</mat-card-content>
+  <mat-card-footer>{{product.price}}</mat-card-footer>
+</mat-card>
+<button (click)="openDialog()" class="add-customer-btn" mat-flat-button color="primary" matTooltip="Add Prosuct">
+  <mat-icon>add</mat-icon> Add Product
+</button>
