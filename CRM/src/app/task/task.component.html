@@ -1,2 +1,64 @@
 <app-menu></app-menu>
-<p>task works!</p>
+
+<button (click)="openDialog()" class="add-customer-btn" mat-fab color="primary" matTooltip="Add User">
+  <mat-icon>add</mat-icon>
+</button>
+
+
+<div class="content">
+<div cdkDropListGroup>
+  <div class="example-container">
+    <h2>To do</h2>
+
+    <div
+      id="todoList"
+      cdkDropList
+      [cdkDropListData]="todo"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item.title}}<br>{{item.description}}</div>
+    </div>
+  </div>
+  <div class="example-container">
+    <h2>In Progress</h2>
+
+    <div
+      id="inProgressList"
+      cdkDropList
+      [cdkDropListData]="inProgress"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of inProgress" cdkDrag>
+        {{item.title}} <br>
+        {{item.description}}
+      </div>
+    </div>
+  </div>
+  <div class="example-container">
+    <h2>Await Feedback</h2>
+
+    <div
+      id="awaitingFeedbackList"
+      cdkDropList
+      [cdkDropListData]="awaitingFeedback"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of awaitingFeedback" cdkDrag>{{item.title}}<br>{{item.description}}</div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Done</h2>
+
+    <div
+      id="doneList"
+      cdkDropList
+      [cdkDropListData]="done"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item.title}}<br>{{item.description}}</div>
+    </div>
+  </div>
+</div>
+</div>
+

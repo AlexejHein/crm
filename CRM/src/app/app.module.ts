@@ -43,6 +43,8 @@ import { DialogEditLeadComponent } from './management/dialog-edit-lead/dialog-ed
 import { AddProductComponent } from './sales/add-product/add-product.component';
 import {MatListModule} from "@angular/material/list";
 import { ProductDetailComponent } from './sales/product-detail/product-detail.component';
+import {CdkDrag, CdkDropList } from "@angular/cdk/drag-drop";
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,10 @@ import { ProductDetailComponent } from './sales/product-detail/product-detail.co
     MatPaginatorModule,
     MatSelectModule,
     MatListModule,
-    MatLineModule
+    MatLineModule,
+    CdkDropList,
+    CdkDrag,
+    DragDropModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
