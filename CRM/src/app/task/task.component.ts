@@ -3,6 +3,8 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import { AngularFirestore} from "@angular/fire/compat/firestore";
 import { Task } from "../models/tasks.class";
 import { TaskService } from "../services/task.service";
+import {MatDialog} from "@angular/material/dialog";
+import {AddTaskComponent} from "./add-task/add-task.component";
 
 
 @Component({
@@ -20,7 +22,8 @@ export class TaskComponent implements OnInit{
   awaitingFeedback: Task[] = [];
   done: Task[] = [];
 
-  constructor(private firebase: AngularFirestore) {
+
+  constructor(private firebase: AngularFirestore, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -111,7 +114,7 @@ export class TaskComponent implements OnInit{
   }
 
   openDialog() {
-    console.log('open dialog');
+    this.dialog.open(AddTaskComponent);
   }
 
 

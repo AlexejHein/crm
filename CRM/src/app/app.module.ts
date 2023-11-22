@@ -45,6 +45,7 @@ import {MatListModule} from "@angular/material/list";
 import { ProductDetailComponent } from './sales/product-detail/product-detail.component';
 import {CdkDrag, CdkDropList } from "@angular/cdk/drag-drop";
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AddTaskComponent } from './task/add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     DialogAddLeadComponent,
     DialogEditLeadComponent,
     AddProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
