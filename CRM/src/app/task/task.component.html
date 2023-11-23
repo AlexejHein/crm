@@ -16,7 +16,18 @@
       [cdkDropListData]="todo"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item.title}}<br>{{item.description}}</div>
+      <div class="example-box" *ngFor="let item of todo" cdkDrag>
+        <mat-card class="task-box">
+          <mat-card-title>{{item.title}}</mat-card-title>
+          <mat-card-content>{{item.description}}</mat-card-content>
+          <mat-card-footer>
+            {{ item.priority}}
+            <button mat-icon-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-card-footer>
+        </mat-card>
+      </div>
     </div>
   </div>
   <div class="example-container">
@@ -29,8 +40,17 @@
       class="example-list"
       (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let item of inProgress" cdkDrag>
-        {{item.title}} <br>
-        {{item.description}}
+        <mat-card class="task-box">
+          <mat-card-title>{{item.title}}</mat-card-title>
+          <mat-card-content>{{item.description}}</mat-card-content>
+          <mat-card-footer>
+            {{ item.priority}}
+            <button mat-icon-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-card-footer>
+
+        </mat-card>
       </div>
     </div>
   </div>
@@ -43,7 +63,18 @@
       [cdkDropListData]="awaitingFeedback"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of awaitingFeedback" cdkDrag>{{item.title}}<br>{{item.description}}</div>
+      <div class="example-box" *ngFor="let item of awaitingFeedback" cdkDrag>
+        <mat-card class="task-box">
+          <mat-card-title>{{item.title}}</mat-card-title>
+          <mat-card-content>{{item.description}}</mat-card-content>
+          <mat-card-footer>
+            {{ item.priority}}
+            <button mat-icon-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-card-footer>
+        </mat-card>
+      </div>
     </div>
   </div>
 
@@ -56,7 +87,18 @@
       [cdkDropListData]="done"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item.title}}<br>{{item.description}}</div>
+      <div class="example-box" *ngFor="let item of done" cdkDrag>
+        <mat-card class="task-box">
+          <mat-card-title>{{item.title}}</mat-card-title>
+          <mat-card-content>{{item.description}}</mat-card-content>
+          <mat-card-footer>
+            {{ item.priority}}
+            <button mat-icon-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-card-footer>
+        </mat-card>
+      </div>
     </div>
   </div>
 </div>

@@ -15,30 +15,42 @@
 }
 
 .example-list {
-  border: solid 1px #ccc;
   min-height: 60px;
-  background: white;
   border-radius: 4px;
-  overflow: hidden;
   display: block;
 }
 
 .example-box {
-  padding: 20px 10px;
-  margin-bottom: 10px;
-  border-bottom: solid 1px #ccc;
-  color: rgba(0, 0, 0, 0.87);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  cursor: grab;
-  background: white;
-  font-size: 14px;
-  &:hover {
-    box-shadow: 0 10px 11px rgba(33,33,33,.2);
+  .task-box{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    &:hover{
+      background: #f5f5f5;
+      cursor: grab;
+    }
+    .task-title{
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .task-desc{
+      font-size: 14px;
+      font-weight: 400;
+    }
+    mat-card-footer{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0;
+      margin-top: 10px;
+    }
   }
+
 }
 
 .cdk-drag-preview {
