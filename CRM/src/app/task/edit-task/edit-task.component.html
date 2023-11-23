@@ -1,0 +1,39 @@
+<div class="dialog-container">
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  <div mat-dialog-content>
+
+    <h1 mat-dialog-title>Edit Task</h1>
+
+    <div>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Title</mat-label>
+        <input [disabled]="loading" [(ngModel)]="task.title" matInput placeholder="Title">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline"  class="mr-16" >
+        <mat-label>Description</mat-label>
+        <input [disabled]="loading" [(ngModel)]="task.description" matInput placeholder="Description">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline" class="width-100">
+        <mat-label>Assigned To</mat-label>
+        <mat-select [(ngModel)]="task.assignedTo">
+          <mat-option *ngFor="let customer of allCustomers" [value]="customer.firstName + ' ' + customer.lastName">
+            {{ customer.firstName }} {{ customer.lastName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button [disabled]="loading" mat-button (click)="dialogRef.close()" >Cancel</button>
+      <button [disabled]="loading" mat-button color="accent" (click)="saveTask()" >Save</button>
+      <button [disabled]="loading" mat-button color="warn" (click)="deleteTask()" >Delete</button>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,32 @@
+<div class="example-container">
+  <h2>{{ title }}</h2>
+  <div
+    [id]="listId!"
+    cdkDropList
+    [cdkDropListData]="tasks"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of tasks" cdkDrag>
+      <mat-card class="task-box">
+        <mat-card-title class="task-title">{{item.title}}</mat-card-title>
+        <mat-card-content class="task-desc">{{item.description}}</mat-card-content>
+        <br>
+        <mat-chip color="primary">{{item.assignedTo}}</mat-chip>
+        <mat-card-footer >
+          <div [ngClass]="{
+            'priority-low': item.priority === 'low',
+            'priority-medium': item.priority === 'medium',
+            'priority-high': item.priority === 'urgent'
+          }"
+
+          >{{ item.priority }}</div>
+
+          <button (click)="edit(item)" mat-icon-button>
+            <mat-icon >edit</mat-icon>
+          </button>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

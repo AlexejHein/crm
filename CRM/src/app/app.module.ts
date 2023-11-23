@@ -46,6 +46,9 @@ import { ProductDetailComponent } from './sales/product-detail/product-detail.co
 import {CdkDrag, CdkDropList } from "@angular/cdk/drag-drop";
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AddTaskComponent } from './task/add-task/add-task.component';
+import { TaskListComponent } from './task/task-list/task-list.component';
+import {MatChipsModule} from "@angular/material/chips";
+import { EditTaskComponent } from './task/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,9 @@ import { AddTaskComponent } from './task/add-task/add-task.component';
     DialogEditLeadComponent,
     AddProductComponent,
     ProductDetailComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    TaskListComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -97,6 +102,7 @@ import { AddTaskComponent } from './task/add-task/add-task.component';
     CdkDropList,
     CdkDrag,
     DragDropModule,
+    MatChipsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
