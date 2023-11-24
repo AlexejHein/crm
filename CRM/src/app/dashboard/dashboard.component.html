@@ -1,4 +1,88 @@
 <app-menu></app-menu>
-<mat-card>
-  <mat-card-title>My Profile</mat-card-title>
+<div class="content">
+  <div class="header-content">
+    <mat-card class="bg-primary">
+      <mat-card-title>Leads</mat-card-title>
+      <mat-card-content>
+        <h1>{{ leads.length }}</h1>
+        <mat-icon>leaderboard</mat-icon>
+      </mat-card-content>
+    </mat-card>
+   <mat-card class="bg-warning">
+      <mat-card-title>Tasks</mat-card-title>
+      <mat-card-content>
+        <h1>{{ allTasks.length }}</h1>
+        <mat-icon>task</mat-icon>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="bg-danger">
+      <mat-card-title>Sales</mat-card-title>
+      <mat-card-content>
+        <h1> 23</h1>
+        <mat-icon>real_estate_agent</mat-icon>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="bg-success">
+      <mat-card-title>Revenue</mat-card-title>
+      <mat-card-content>
+        <h1>33.000</h1>
+        <mat-icon>monetization_on</mat-icon>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+<div class="chart-board">
+<mat-card class="sales">
+  <div class="chart-container">
+    <div class="header">
+    <h2>Sales  </h2>
+    <mat-icon routerLink="/customer">navigate_next</mat-icon>
+    </div>
+    <canvas id="customerChartCanvas"></canvas>
+  </div>
 </mat-card>
+
+<mat-card class="tasks">
+  <div class="header">
+    <h2>Tasks </h2>
+    <mat-icon routerLink="/task">navigate_next</mat-icon>
+  </div>
+  <div class="chart-container">
+    <canvas id="taskChartCanvas"></canvas>
+  </div>
+</mat-card>
+
+</div>
+
+<div class="lead-board">
+
+<mat-card>
+  <mat-card-title>New Leads</mat-card-title>
+  <mat-card-content>
+    <ul>
+      <ng-container *ngFor="let lead of leads">
+        <li *ngIf="lead.status === 'new' || lead.status === ''" routerLink="/management" >
+          {{ lead.firstName }} {{ lead.lastName}} is waiting for an appointment.
+        </li>
+      </ng-container>
+    </ul>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Working Leads</mat-card-title>
+  <mat-card-content>
+    <ul>
+      <ng-container *ngFor="let lead of leads">
+        <li *ngIf="lead.status === 'working'" routerLink="/management">
+        {{ lead.firstName }} {{ lead.lastName}} had an appointment on {{ lead.appointmentDate ? (lead.appointmentDate | date) : '' }}.
+        </li>
+      </ng-container>
+    </ul>
+  </mat-card-content>
+</mat-card>
+
+</div>
+</div>
+
+

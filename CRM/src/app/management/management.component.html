@@ -60,7 +60,7 @@
           <mat-icon>book_online</mat-icon>
         </button>
 
-        <button mat-mini-fab color="warn" (click)="deleteLead(element.id)" *ngIf="element.status === 'closed'"  matTooltip="Delete Lead" ><mat-icon>delete</mat-icon></button>
+        <button mat-mini-fab color="warn" (click)="deleteLead(element.id)" *ngIf="element.status === 'unqualified'"  matTooltip="Delete Lead" ><mat-icon>delete</mat-icon></button>
       </td>
     </ng-container>
 
@@ -78,8 +78,8 @@
 <div class="status-history">
   <div class="status-item new" matTooltip=" When a lead is labeled as New, indicated by a grey color, it means that the lead has just been created or entered into the system. This status is typically assigned to leads that are freshly acquired and have not yet been processed or contacted.">New <mat-icon>help</mat-icon></div>
   <div class="status-item status-working" matTooltip="A lead marked as Working, shown in light green, signifies that it is currently being actively handled or processed. This status is used for leads that are in the midst of engagement, follow-up, or negotiation, indicating ongoing interaction or assessment.">Working <mat-icon>help</mat-icon></div>
-  <div class="status-item status-closed" matTooltip="The Closed status, represented by light coral, is assigned to leads that have completed the sales cycle. These leads might have resulted in a successful sale, a lost opportunity, or have been marked as no longer viable. Leads in this category are often archived or removed from active follow-up lists. Additionally, leads with a Closed status are eligible for deletion from the system.">Closed <mat-icon>help</mat-icon></div>
-  <div class="status-item status-unqualified" matTooltip="Leads marked as Unqualified, and highlighted in light yellow, are those that have been evaluated and deemed not suitable or not ready for the sales process. This status is typically used for leads that do not meet certain criteria or qualification standards, indicating that they should not be pursued further at the current time.">Unqualified <mat-icon>help</mat-icon></div>
+  <div class="status-item status-closed" matTooltip="The Closed status, represented by light yellow, is assigned to leads that have completed the sales cycle. These leads might have resulted in a successful sale, a lost opportunity, or have been marked as no longer viable. Leads in this category are often archived or removed from active follow-up lists. Additionally, leads with a Closed status are eligible for deletion from the system.">Closed <mat-icon>help</mat-icon></div>
+  <div class="status-item status-unqualified" matTooltip="Leads marked as Unqualified, and highlighted in light coral, are those that have been evaluated and deemed not suitable or not ready for the sales process. This status is typically used for leads that do not meet certain criteria or qualification standards, indicating that they should not be pursued further at the current time.">Unqualified <mat-icon>help</mat-icon></div>
 </div>
 </mat-card>
 
