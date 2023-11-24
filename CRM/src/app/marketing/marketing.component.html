@@ -4,8 +4,9 @@
 
   <mat-tab label="Mailing Lists">
     <!-- Code for segmenting mailing lists -->
-    <mat-card>
+    <mat-card class="pd-16">
       <mat-card-title>Mailing List</mat-card-title>
+      <br>
       <mat-card-content>
         <div>
           <mat-form-field appearance="outline" class="width-100">
@@ -31,14 +32,30 @@
       </mat-card-content>
       <div *ngIf="selectedTemplateContent">
         <h3>Selected Template Content:</h3>
-        <p>{{ selectedTemplateContent }}</p>
+
+        <mat-card>
+          <mat-card-content>
+            <!-- Anzeige des Vorlageninhalts -->
+            <p>{{ selectedTemplateContent }}</p>
+
+            <!-- Anzeige der E-Mail-Adresse des Empfängers -->
+            <p><strong>Recipient's Email:</strong> {{ recipientEmail }}</p>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Schaltflächen -->
+        <div class="action-buttons">
+          <button mat-button (click)="resetTemplate()">Reset</button>
+          <button mat-raised-button color="primary" (click)="sendEmail()">Send Email</button>
+        </div>
       </div>
+
     </mat-card>
   </mat-tab>
 
   <mat-tab label="Email Templates">
     <!-- Code for creating and managing email templates -->
-    <mat-card>
+    <mat-card class="pd-16">
       <mat-card-title>Create New Email Template</mat-card-title>
       <mat-card-content>
         <mat-form-field appearance="fill">
@@ -101,16 +118,6 @@
     </mat-accordion>
 
 
-  </mat-tab>
-
-  <mat-tab label="Campaign Statistics">
-    <!-- Code for displaying campaign statistics -->
-    <mat-card>
-      <mat-card-title>Campaign Statistics</mat-card-title>
-      <mat-card-content>
-        <!-- Add code for displaying statistics here -->
-      </mat-card-content>
-    </mat-card>
   </mat-tab>
 </mat-tab-group>
 

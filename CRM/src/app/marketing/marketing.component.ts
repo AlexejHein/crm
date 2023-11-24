@@ -21,6 +21,7 @@ export class MarketingComponent {
   selectedLead: string | undefined;
   selectedTemplateName: string | undefined;
   selectedTemplateContent: string | undefined;
+  recipientEmail: string | undefined;
 
 constructor(public mailTemplateService: MailTemplateService,
             private firestore: AngularFirestore) {}
@@ -37,9 +38,29 @@ constructor(public mailTemplateService: MailTemplateService,
 
   onTemplateSelect() {
     const selectedTemplate = this.allMailTemplates.find(t => t.templateName === this.selectedTemplateName);
-    if (selectedTemplate && this.selectedLead) {
-      this.selectedTemplateContent = selectedTemplate.templateContent.replace('[name]', this.selectedLead);
+    const selectedLead = this.allLeads.find(lead => lead.firstName + ' ' + lead.lastName === this.selectedLead);
+
+    if (selectedTemplate && selectedLead) {
+      this.selectedTemplateContent = selectedTemplate.templateContent.replace('[name]', selectedLead.firstName);
+      this.recipientEmail = selectedLead.email; // Angenommen, das Lead-Objekt hat eine Eigenschaft 'email'
     }
+
+  }
+
+
+  resetTemplate() {
+    this.selectedLead = undefined;
+    this.selectedTemplateName = undefined;
+    this.selectedTemplateContent = undefined;
+    this.recipientEmail = undefined;
+  }
+
+
+  sendEmail() {
+    // Logik zum Senden der E-Mail
+    console.log('Sending email:', this.selectedTemplateContent);
+    this.resetTemplate();
+    // Weitere Sendelogik nach Bedarf
   }
 
 
