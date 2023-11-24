@@ -6,7 +6,6 @@ import { AuthGuard } from "./services/routeguard.service";
 import {CustomerComponent} from "./customer/customer.component";
 import {MenuComponent} from "./menu/menu.component";
 import {ManagementComponent} from "./management/management.component";
-import {HistoryComponent} from "./history/history.component";
 import {SalesComponent} from "./sales/sales.component";
 import {TaskComponent} from "./task/task.component";
 import {MarketingComponent} from "./marketing/marketing.component";
@@ -33,10 +32,6 @@ const routes: Routes = [
   {
     path: 'management', canActivate: [AuthGuard],
     component: ManagementComponent
-  },
-  {
-    path: 'history', canActivate: [AuthGuard],
-    component: HistoryComponent
   },
   {
     path: 'sales', canActivate: [AuthGuard],

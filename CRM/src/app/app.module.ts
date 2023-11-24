@@ -22,7 +22,6 @@ import { MatToolbarModule} from "@angular/material/toolbar";
 import { CustomerComponent } from './customer/customer.component';
 import { ManagementComponent } from './management/management.component';
 import { SalesComponent } from './sales/sales.component';
-import { HistoryComponent } from './history/history.component';
 import { TaskComponent } from './task/task.component';
 import { MarketingComponent } from './marketing/marketing.component';
 import { DialogAddCostumerComponent } from './customer/dialog-add-costumer/dialog-add-costumer.component';
@@ -49,6 +48,8 @@ import { AddTaskComponent } from './task/add-task/add-task.component';
 import { TaskListComponent } from './task/task-list/task-list.component';
 import {MatChipsModule} from "@angular/material/chips";
 import { EditTaskComponent } from './task/edit-task/edit-task.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -59,7 +60,6 @@ import { EditTaskComponent } from './task/edit-task/edit-task.component';
     CustomerComponent,
     ManagementComponent,
     SalesComponent,
-    HistoryComponent,
     TaskComponent,
     MarketingComponent,
     DialogAddCostumerComponent,
@@ -103,6 +103,8 @@ import { EditTaskComponent } from './task/edit-task/edit-task.component';
     CdkDrag,
     DragDropModule,
     MatChipsModule,
+    MatTabsModule,
+    MatExpansionModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
