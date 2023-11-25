@@ -4,6 +4,7 @@
   margin: 0 25px 25px 0;
   display: inline-block;
   vertical-align: top;
+
 }
 
 .example-list {
@@ -15,11 +16,14 @@
 .task-box {
   width: 100%;
   padding: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  border-radius: 5px;
+  background: #f0ffff;
+  box-shadow:  -7px -7px 5px #ddebeb, 7px 7px 5px #ffffff;
 
   &:hover {
     background-color: rgb(240, 242, 255);

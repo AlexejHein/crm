@@ -1,23 +1,23 @@
 <div class="dialog-container">
   <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
-  <div mat-dialog-content>
+  <div class="dialog" mat-dialog-content>
 
     <h1 mat-dialog-title>Add Task</h1>
 
     <div>
-      <mat-form-field class="mr-16" appearance="outline">
+      <mat-form-field class="mr-16 width-100" appearance="outline">
         <mat-label>Title</mat-label>
         <input [disabled]="loading" [(ngModel)]="task.title" matInput placeholder="Title">
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="width-100">
         <mat-label>Description</mat-label>
         <textarea [disabled]="loading" [(ngModel)]="task.description" matInput placeholder="Description"></textarea>
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="width-100">
         <mat-label>Priority</mat-label>
         <mat-select [(ngModel)]="task.priority">
           <mat-option value="low">Low</mat-option>
@@ -37,7 +37,7 @@
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="width-100">
         <mat-label>Status</mat-label>
         <mat-select [(ngModel)]="task.status">
           <mat-option value="todo">Todo</mat-option>

@@ -58,6 +58,8 @@ export class DashboardComponent {
   }
 
 
+
+
   createCustomerChart() {
     const customerNames = this.allCustomers.map(customer => customer.lastName);
     const customerSales = this.allCustomers.map(customer => customer.sales);
@@ -66,9 +68,11 @@ export class DashboardComponent {
       type: 'bar',
       data: {
         labels: customerNames,
-        datasets: [{ label: "Sales",
+        datasets: [{ label: 'Sales',
           data: customerSales,
-          backgroundColor: 'rgba(112,130,210,0.5)' }]
+          backgroundColor: 'rgba(112,130,210,0.5)'
+        }
+          ]
       },
       options: { aspectRatio: 2.5, scales: { y: { beginAtZero: true } } }
     });
@@ -89,7 +93,7 @@ export class DashboardComponent {
         labels: ['Low', 'Medium', 'Urgent'],
         datasets: [{
           data: [lowCount, mediumCount, urgentCount],
-          backgroundColor: ['rgba(184,245,123,0.5)', 'rgba(255,221,0,0.5)', 'rgba(255,0,47,0.5)'],
+          backgroundColor: ['rgba(184,245,123,0.5)', 'rgba(255,221,0,0.5)', 'rgba(255,0,47,0.5)']
         }]
       },
       options: {

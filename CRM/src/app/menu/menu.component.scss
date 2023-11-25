@@ -1,7 +1,21 @@
+mat-toolbar{
+  background: linear-gradient(45deg, #2196F3 0%, #21CBF3 100%);
+  color: #ffffff;
+  box-shadow:  -7px -7px 5px #ddebeb,
+  7px 7px 5px #ffffff;
+  //box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+  .mat-toolbar-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
 .sidenav{
   width: 250px;
   background-color: #fff;
-  color: #2c2c2c;
+  color: #949494;
   position: fixed;
   z-index: 999;
   top: 0;
@@ -10,7 +24,7 @@
   padding-top: 20px;
   //border-right: 1px solid #ccc;
   height: 100vh;
-  //box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
 
   .logo{
     width: 100%;
@@ -39,7 +53,7 @@
         font-size: 20px;
         display: flex;
         align-items: center;
-        color: #424242;
+        color: #949494;
         gap: 10px;
         width: 100%;
         margin: 10px 0  10px 10px;

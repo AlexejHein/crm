@@ -1,12 +1,12 @@
 <app-menu></app-menu>
 <mat-card>
   <table class="user-table">
-    <tr>
+    <tr class="pd-16">
       <th>Name</th>
       <th>E-Mail</th>
       <th>City</th>
     </tr>
-    <tr *ngFor="let customer of allCustomers" [routerLink]="['/customer/' + customer['customIdName']]">
+    <tr class="pd-16" *ngFor="let customer of allCustomers" [routerLink]="['/customer/' + customer['customIdName']]">
       <td>{{customer["lastName"]}} {{ customer["firstName"] }}</td>
       <td>{{ customer["email"]}}</td>
       <td>{{ customer["city"] }}</td>

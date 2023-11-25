@@ -7,7 +7,8 @@
   <mat-menu #userMenu="matMenu">
     <button mat-menu-item (click)="editCustomerDetail()">Edit</button>
   </mat-menu>
-  <!--<img src="assets/img/user.png"> -->
+
+  <img src="assets/img/user.png">
   <mat-icon>user</mat-icon>
   <div class="user-details">
     <h2>{{customer.firstName}} {{customer.lastName}}</h2> <br>
@@ -30,7 +31,32 @@
     <p>{{customer.street}}</p>
     <p>{{customer.zipCode}} {{customer.city}}</p>
   </mat-card-content>
-
-
 </mat-card>
+
+  <div class="user-action">
+    <mat-card>
+      <span class="user-action-header">
+      <h2>Sales</h2>
+      </span>
+      <div class="user-action-content">
+        <p>this month: {{ customer.sales }}</p>
+      </div>
+    </mat-card>
+    <mat-card>
+      <span class="user-action-header">
+      <h2>Task</h2>
+      </span>
+      <div class="user-action-content">
+        <p>Task 1</p>
+      </div>
+    </mat-card>
+    <mat-card>
+      <span class="user-action-header">
+        <h2>Appointments</h2>
+      </span>
+      <div class="user-action-content">
+        <p>Appointment 1</p>
+      </div>
+    </mat-card>
+  </div>
 </div>

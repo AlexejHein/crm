@@ -1,3 +1,11 @@
+mat-card{
+  border: none;
+  padding: 16px;
+  border-radius: 5px;
+  background: #f0ffff;
+  box-shadow:  -7px -7px 5px #ddebeb,
+  7px 7px 5px #ffffff;
+}
 .product-container {
   display: flex;
   justify-content: space-around;
@@ -6,17 +14,21 @@
 
 .product-card {
   width: 30%;
-  border: 1px solid #ddd;
-  border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  background: #f0ffff;
+  box-shadow:  -7px -7px 5px #ddebeb,
+  7px 7px 5px #ffffff;
   text-align: center;
 }
 
 .product-card img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 5px;
+  background: #f0ffff;
+  box-shadow:  -7px -7px 5px #ddebeb,
+  7px 7px 5px #ffffff;
 }
 
 .product-card h3 {
