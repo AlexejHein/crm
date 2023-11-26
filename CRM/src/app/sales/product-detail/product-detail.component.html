@@ -1,11 +1,70 @@
-<mat-card>
+<mat-card class="m16 pd-16">
     <mat-card-title> {{ product.name }} </mat-card-title>
     <mat-card-content>
         <p> {{ product.description }} </p>
-        <p> {{ product.price }} </p>
+        <p> $ {{ product.price }}/month </p>
     </mat-card-content>
     <mat-card-actions>
         <button routerLink="/sales" mat-button><mat-icon>arrow_back</mat-icon></button>
-        <button mat-button>SHARE</button>
     </mat-card-actions>
+</mat-card>
+
+<mat-card class="m16">
+
+<mat-card class="example-accordion m16 pd-16">
+  <!-- Big Data Analytics Platform Panel -->
+  <mat-accordion class="product-accordion m16 pd-16">
+    <!-- Big Data Analytics Platform Panel -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Big Data Analytics Platform
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="panel-content">
+        <p>This solution offers businesses deep insights through advanced data visualization and predictive analytics tools. It transforms complex data into actionable intelligence, enabling companies to make informed decisions based on thorough data analysis. Utilizing state-of-the-art algorithms, this platform can identify trends, forecast future outcomes, and provide a comprehensive understanding of data patterns.</p>
+        <p>Key features include interactive dashboards, real-time analytics, and custom report generation, making it a powerful tool for data-driven organizations seeking to harness the power of their data for strategic advantage.</p>
+      </div>
+    </mat-expansion-panel>
+
+    <!-- Virtual Event Hosting Platform Panel -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Virtual Event Hosting Platform
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="panel-content">
+        <p>This platform is an all-in-one solution for hosting engaging and interactive virtual events. It caters to the growing need for digital conferences, workshops, and seminars, offering tools that facilitate real-time interaction, multimedia presentations, and audience participation. The platform supports various virtual event formats and provides seamless integration with other digital tools and social media platforms.</p>
+        <p>It's designed for ease of use, enabling event organizers to create immersive experiences that can connect audiences globally. Features like virtual breakout rooms, interactive polling, and live Q&A sessions make it a versatile choice for virtual event management.</p>
+      </div>
+    </mat-expansion-panel>
+
+    <!-- Cloud Storage Solution Panel -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Cloud Storage Solution
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="panel-content">
+        <p>This cloud storage solution provides a secure and scalable way to store and access data. It is designed for both individual and enterprise use, offering robust security measures to protect sensitive information. The platform enables users to easily upload, store, and share a variety of file types, from documents to large media files.</p>
+        <p>The user-friendly interface ensures a smooth experience, while advanced features like automatic syncing, data backup, and remote access make it a reliable option for efficient data management. It's an ideal solution for those who need to access their data from anywhere, at any time.</p>
+      </div>
+    </mat-expansion-panel>
+
+    <!-- AI-Powered Code Editor Panel -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          AI-Powered Code Editor
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="panel-content">
+        <p>This AI-powered code editor revolutionizes the software development process. It provides real-time code analysis and error detection, significantly reducing debugging time. The editor uses advanced algorithms to offer intelligent coding assistance, suggesting optimizations and best practices.</p>
+        <p>Designed for both novice and experienced developers, it enhances coding efficiency and accuracy. Features like automatic code refactoring, syntax highlighting, and integrated version control make it a comprehensive tool for modern software development.</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
 </mat-card>

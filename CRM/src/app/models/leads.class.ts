@@ -11,7 +11,7 @@ export class Lead {
   comments?: string;
   status?: string;
   source?: string;
-  appointmentDate?: string;
+  appointmentDate?: Date;
 
   constructor( obj?: any) {
     this.createdAt = obj ? obj.createdAt : '';

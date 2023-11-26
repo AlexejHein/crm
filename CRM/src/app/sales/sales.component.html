@@ -22,7 +22,7 @@
 <mat-card *ngFor="let product of allProducts" class="pd-16 m16 card" [routerLink]="['/sales/' + product['customIdName']]">
   <mat-card-title matLine>{{product.name}}</mat-card-title>
   <mat-card-content>{{product.description}}</mat-card-content>
-  <mat-card-footer>{{product.price}}</mat-card-footer>
+  <mat-card-footer> $ {{ product.price }}/month </mat-card-footer>
 </mat-card>
 <button (click)="openDialog()" class="add-customer-btn" mat-flat-button color="primary" matTooltip="Add Prosuct">
   <mat-icon>add</mat-icon> Add Product

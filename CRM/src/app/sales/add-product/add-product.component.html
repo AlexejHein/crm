@@ -2,11 +2,11 @@
   <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
   <div mat-dialog-content>
 
-    <h1 mat-dialog-title>Add Customer</h1>
+    <h1 mat-dialog-title>Add Product</h1>
 
     <div>
       <mat-form-field class="mr-16 width-100" appearance="outline" >
-        <mat-label>First Name</mat-label>
+        <mat-label>Product Name</mat-label>
         <input [disabled]="loading" [(ngModel)]="product.name" matInput placeholder="Name">
       </mat-form-field>
 

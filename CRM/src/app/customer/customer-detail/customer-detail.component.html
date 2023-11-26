@@ -47,7 +47,7 @@
       <h2>Task</h2>
       </span>
       <div class="user-action-content">
-        <p>Task 1</p>
+        <p>ToDos:  {{ taskCount }}</p>
       </div>
     </mat-card>
     <mat-card>
@@ -55,7 +55,10 @@
         <h2>Appointments</h2>
       </span>
       <div class="user-action-content">
-        <p>Appointment 1</p>
+        <div *ngFor="let lead of leads">
+          <p *ngIf="lead.appointmentDate">Termin: {{ lead.appointmentDate | date:'medium' }}, Lead Name: {{ lead.firstName }} {{ lead.lastName }}</p>
+          <p *ngIf="!lead.appointmentDate">Kein Termin vorhanden, Lead Name: {{ lead.firstName }} {{ lead.lastName }}</p>
+        </div>
       </div>
     </mat-card>
   </div>

@@ -42,8 +42,16 @@ mat-card{
 }
 .card{
   &:hover{
-    background-color: rgba(66, 66, 66, 0.09);
+    background-color: rgb(240, 242, 255);
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     cursor: pointer;
   }
 }
+.add-customer-btn{
+  margin: 12px;
+
+  background: linear-gradient(45deg, #2196F3 0%, #21CBF3 100%);
+  box-shadow:  -3px -3px 5px #ddebeb,
+  3px 3px 5px #ffffff;
+}
+

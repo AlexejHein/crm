@@ -1,7 +1,11 @@
 mat-card{
   position: relative;
-  padding: 24px;
   margin: 16px;
+  padding: 16px;
+  border-radius: 5px;
+  background: #f0ffff;
+  box-shadow:  -7px -7px 5px #ddebeb,
+  7px 7px 5px #ffffff;
   overflow: hidden;
   mat-card-content{
     padding: 12px 24px;
@@ -11,10 +15,17 @@ mat-card{
     position: absolute;
     right: 30px;
     bottom: 30px;
+    color: #ffffff;
+    background: linear-gradient(45deg, #2196F3 0%, #21CBF3 100%);
+    box-shadow:  -3px -3px 5px #ddebeb,
+    3px 3px 5px #ffffff;
   }
 }
 .back-btn{
   position: absolute;
   right: 30px;
   bottom: 30px;
+  background: linear-gradient(45deg, #2196F3 0%, #21CBF3 100%);
+  box-shadow:  -3px -3px 5px #ddebeb,
+  3px 3px 5px #ffffff;
 }

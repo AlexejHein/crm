@@ -5,6 +5,8 @@ import {Customer} from "../../models/customers.class";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogEditAddressComponent} from "../dialog-edit-address/dialog-edit-address.component";
 import {DialogEditCustomerComponent} from "../dialog-edit-customer/dialog-edit-customer.component";
+import { Task } from '../../models/tasks.class';
+import { Lead } from "../../models/leads.class";
 
 @Component({
   selector: 'app-customer-detail',
@@ -15,6 +17,12 @@ export class CustomerDetailComponent implements OnInit{
 
   customerId = '';
   customer: Customer = new Customer();
+  tasks: Task[] = [];
+  taskCount = 0;
+  leads: any[] = [];
+
+
+
 
   constructor(private route:ActivatedRoute,
               private firestore: AngularFirestore,
@@ -24,8 +32,16 @@ export class CustomerDetailComponent implements OnInit{
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap =>{
       this.customerId = paramMap.get('id') || '';
-      this.getUser();
-    })
+      this.getUser();  // Laden des Benutzers
+    });
+  }
+
+  getCustomerTasks() {
+    this.firestore.collection('tasks', ref => ref.where('assignedTo', '==', this.customer.firstName + ' ' + this.customer.lastName))
+      .get().subscribe(snapshot => {
+      this.tasks = snapshot.docs.map(doc => new Task(doc.data()));
+      this.taskCount = this.tasks.length;
+    });
   }
   getUser(){
     this.firestore
@@ -33,8 +49,30 @@ export class CustomerDetailComponent implements OnInit{
       .doc(this.customerId).get()
       .subscribe(doc =>{
         this.customer = new Customer(doc.data());
+        this.getCustomerTasks();
+        this.getCustomerLeads();
       })
   }
+
+  getCustomerLeads() {
+    this.firestore.collection('leads', ref => ref
+      .where('assignedTo', '==', this.customer.firstName + ' ' + this.customer.lastName))
+      .get().subscribe(snapshot => {
+      this.leads = snapshot.docs.map(doc => {
+        const data = doc.data() as any;
+        if (data.appointmentDate && data.appointmentDate.seconds) {
+          data.appointmentDate = new Date(data.appointmentDate.seconds * 1000);
+        } else {
+          data.appointmentDate = null;
+        }
+        return data;
+      });
+    });
+  }
+
+
+
+
   editMenu() {
     const dialog = this.dialog.open(DialogEditAddressComponent)
     dialog.componentInstance.customer = new Customer(this.customer.toJSON());
@@ -45,4 +83,5 @@ export class CustomerDetailComponent implements OnInit{
     dialog.componentInstance.customer = new Customer(this.customer.toJSON());
     dialog.componentInstance.customerId = this.customerId;
   }
+
 }

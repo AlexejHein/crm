@@ -1,0 +1,39 @@
+mat-card{
+  padding: 16px;
+  border-radius: 5px;
+  background: #f0ffff;
+  box-shadow:  -7px -7px 5px #ddebeb,
+  7px 7px 5px #ffffff;
+}
+.product-accordion {
+  margin: 20px;
+}
+mat-accordion{
+  margin: 12px!important;
+}
+
+.product-accordion .mat-expansion-panel-header {
+  background: #f0ffff;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow:  -7px -7px 5px #ddebeb,
+  7px 7px 5px #ffffff;
+}
+
+.panel-content {
+  margin: 15px;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 16px;
+  border-radius: 5px;
+  background: #f0ffff;
+  box-shadow:  -7px -7px 5px #ddebeb,
+  7px 7px 5px #ffffff;
+}
+
+.mat-panel-title {
+  font-weight: bold;
+  color: #333;
+}
+

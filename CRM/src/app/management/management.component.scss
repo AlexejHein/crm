@@ -1,17 +1,45 @@
+.mat-elevation{
+  padding: 16px;
+  border-radius: 5px;
+  background: #f0ffff;
+  box-shadow:  -7px -7px 5px #ddebeb,
+  7px 7px 5px #ffffff;
+  table{
+    padding: 16px;
+    border-radius: 5px;
+    background: #f0ffff;
+    box-shadow:  -7px -7px 5px #ddebeb,
+    7px 7px 5px #ffffff;
+  }
+  mat-paginator{
+    background: #f0ffff;
+    box-shadow:  -7px -7px 5px #ddebeb,
+    7px 7px 5px #ffffff;
+  }
+}
 .add-lead-btn{
   position: fixed;
+  background: linear-gradient(45deg, #2196F3 0%, #21CBF3 100%);
+  box-shadow:  -3px -3px 5px #ddebeb,
+  3px 3px 5px #ffffff;
   bottom: 20px;
   right: 20px;
   z-index: 100;
 }
 .info{
   width: 600px;
+  padding: 16px;
+  border-radius: 5px;
+  background: #f0ffff;
+  box-shadow:  -7px -7px 5px #ddebeb,
+  7px 7px 5px #ffffff;
 }
 .status-history{
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
+
   .status-item {
     display: flex;
     justify-content: center;
