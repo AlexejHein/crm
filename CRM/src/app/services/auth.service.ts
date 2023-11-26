@@ -16,6 +16,9 @@ export class AuthService {
   login(email: string | undefined, password: string | undefined) {
     return this.afAuth.signInWithEmailAndPassword(<string>email, <string>password);
   }
+  createUser(email: string, password: string) {
+    return this.afAuth.createUserWithEmailAndPassword(email, password);
+  }
   isAuthenticated() {
     return this.user.pipe(
       map(user => !!user),

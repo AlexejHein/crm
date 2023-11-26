@@ -10,27 +10,20 @@ import { Customer } from '../../models/customers.class';
   styleUrls: ['./dialog-add-lead.component.scss']
 })
 export class DialogAddLeadComponent implements OnInit {
-
   lead = new Lead();
   customer = new Customer();
   allCustomers: any[] = [];
-
   loading = false;
   currentDate:string;
-
-  constructor(public dialogRef: MatDialogRef<DialogAddLeadComponent>,
-              private firestore: AngularFirestore) {
-
+  constructor(public dialogRef: MatDialogRef<DialogAddLeadComponent>, private firestore: AngularFirestore) {
     this.currentDate = new Date().toISOString().substring(0, 10);
   }
-
   ngOnInit(): void {
     this.firestore.collection('customers')
       .valueChanges({ idField: 'customIdName' })
       .subscribe((changes: any) => {
         this.allCustomers = changes;
       });
-    console.log(this.allCustomers);
     setInterval(() => {
       this.currentDate = new Date().toLocaleString('de-DE', {
         year: 'numeric',
@@ -42,10 +35,8 @@ export class DialogAddLeadComponent implements OnInit {
       });
     }, 1000);
   }
-
   saveLead() {
     this.loading = true;
-
     this.firestore.collection('leads').add(this.lead.toJSON())
       .then(r => {
         this.lead.updatedAt = this.currentDate;
@@ -53,7 +44,4 @@ export class DialogAddLeadComponent implements OnInit {
       });
     this.dialogRef.close();
   }
-
-
-
 }

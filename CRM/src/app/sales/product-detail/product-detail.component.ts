@@ -9,21 +9,16 @@ import { Products } from "../../models/products.class";
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent {
-
     productId = '';
     product: Products = new Products();
-
-    constructor(private route: ActivatedRoute,
-                private firestore: AngularFirestore) {
+    constructor(private route: ActivatedRoute, private firestore: AngularFirestore) {
     }
-
     ngOnInit() {
       this.route.paramMap.subscribe(paramMap => {
         this.productId = paramMap.get('id') || '';
         this.getUser();
       })
     }
-
     getUser() {
       this.firestore
         .collection('products')
@@ -32,5 +27,4 @@ export class ProductDetailComponent {
           this.product = new Products(doc.data());
         })
     }
-
 }

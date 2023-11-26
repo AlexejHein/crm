@@ -42,11 +42,7 @@ export class DashboardComponent {
         appointmentDate: this.convertToDate(lead.appointmentDate)
       }));
     });
-
-
-
   }
-
   convertToDate(appointmentDate: any): Date | null {
     if (appointmentDate?.toDate) {
       return appointmentDate.toDate();
@@ -56,14 +52,9 @@ export class DashboardComponent {
     }
     return null;
   }
-
-
-
-
   createCustomerChart() {
     const customerNames = this.allCustomers.map(customer => customer.lastName);
     const customerSales = this.allCustomers.map(customer => customer.sales);
-
     this.customerChart = new Chart("customerChartCanvas", {
       type: 'bar',
       data: {
@@ -77,16 +68,13 @@ export class DashboardComponent {
       options: { aspectRatio: 2.5, scales: { y: { beginAtZero: true } } }
     });
   }
-
   countTasksByPriority(priority: string) {
     return this.allTasks.filter(task => task.priority === priority).length;
   }
-
   createTaskChart() {
     const lowCount = this.countTasksByPriority('low');
     const mediumCount = this.countTasksByPriority('medium');
     const urgentCount = this.countTasksByPriority('urgent');
-
     this.taskChart = new Chart("taskChartCanvas", {
       type: 'doughnut',
       data: {
@@ -101,5 +89,4 @@ export class DashboardComponent {
       }
     });
   }
-
 }

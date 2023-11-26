@@ -9,13 +9,10 @@ import { Lead } from "../../models/leads.class";
   styleUrls: ['./dialog-edit-lead.component.scss']
 })
 export class DialogEditLeadComponent {
-
   leadId = '';
   lead: Lead = new Lead();
-
   constructor(private route:ActivatedRoute, private firestore: AngularFirestore) {
   }
-
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap =>{
       this.leadId = paramMap.get('id') || '';
@@ -39,5 +36,4 @@ export class DialogEditLeadComponent {
         console.log(r);
       });
   }
-
 }

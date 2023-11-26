@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Customer} from "../../models/customers.class";
 import {MatDialogRef} from "@angular/material/dialog";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
@@ -8,18 +8,12 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
   templateUrl: './dialog-edit-customer.component.html',
   styleUrls: ['./dialog-edit-customer.component.scss']
 })
-export class DialogEditCustomerComponent implements OnInit{
+export class DialogEditCustomerComponent {
 
   customer: Customer = new Customer();
   loading = false;
   customerId :string = '';
-
-
   constructor(public dialogRef: MatDialogRef<DialogEditCustomerComponent>,private firestore: AngularFirestore) {
-  }
-
-  ngOnInit(): void {
-
   }
   saveUser(){
     this.loading = true;

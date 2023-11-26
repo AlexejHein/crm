@@ -8,7 +8,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
-  showFiller = false;
   constructor(public afAuth: AngularFireAuth, private router: Router) { }
   logout() {
     this.afAuth.signOut().then(r => this.router.navigate(['']));

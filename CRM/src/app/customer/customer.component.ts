@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog} from "@angular/material/dialog";
 import {DialogAddCostumerComponent} from "./dialog-add-costumer/dialog-add-costumer.component";
 import { Customer } from "../models/customers.class";
-import firebase from "firebase/compat";
-import firestore = firebase.firestore;
 import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {CustomerService} from "../services/customer.service";
 
 
 @Component({
@@ -14,15 +11,9 @@ import {CustomerService} from "../services/customer.service";
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent {
-
-  costumer = new Customer();
   allCustomers: any[] = [];
 
-  constructor(public dialog: MatDialog,
-              private firestore: AngularFirestore,
-              private costumerService: CustomerService) {}
-
-
+  constructor(public dialog: MatDialog, private firestore: AngularFirestore) {}
   ngOnInit(): void {
     this.firestore.collection('customers')
       .valueChanges({idField: 'customIdName'})

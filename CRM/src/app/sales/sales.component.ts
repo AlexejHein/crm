@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { MatDialog} from "@angular/material/dialog";
 import { AddProductComponent} from "./add-product/add-product.component";
 import { Products } from "../models/products.class";
-import firebase from "firebase/compat";
-import firestore = firebase.firestore;
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Component({
@@ -12,14 +10,9 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
   styleUrls: ['./sales.component.scss']
 })
 export class SalesComponent {
-
   product = new Products();
   allProducts: any[] = [];
-
-  constructor(public dialog: MatDialog,
-              private firestore: AngularFirestore) {}
-
-
+  constructor(public dialog: MatDialog, private firestore: AngularFirestore) {}
   ngOnInit(): void {
     this.firestore.collection('products')
       .valueChanges({idField: 'customIdName'})
@@ -30,5 +23,4 @@ export class SalesComponent {
   openDialog(): void {
     this.dialog.open(AddProductComponent);
   }
-
 }

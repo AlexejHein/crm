@@ -14,8 +14,7 @@ export class AddTaskComponent {
   allCustomers: any[] = [];
   task = new Task();
   loading = false;
-  constructor(private firestore: AngularFirestore,
-              public dialogRef: MatDialogRef<AddTaskComponent>) { }
+  constructor(private firestore: AngularFirestore, public dialogRef: MatDialogRef<AddTaskComponent>) { }
 
   ngOnInit(): void {
     this.firestore.collection('customers')
@@ -24,7 +23,6 @@ export class AddTaskComponent {
         this.allCustomers = changes;
       });
   }
-
   saveTask() {
     this.loading = true;
     this.firestore.collection('tasks').add(this.task.toJSON())
@@ -33,5 +31,4 @@ export class AddTaskComponent {
       });
     this.dialogRef.close();
   }
-
 }

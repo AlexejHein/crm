@@ -55,9 +55,11 @@
         <h2>Appointments</h2>
       </span>
       <div class="user-action-content">
-        <div *ngFor="let lead of leads">
-          <p *ngIf="lead.appointmentDate">Termin: {{ lead.appointmentDate | date:'medium' }}, Lead Name: {{ lead.firstName }} {{ lead.lastName }}</p>
-          <p *ngIf="!lead.appointmentDate">Kein Termin vorhanden, Lead Name: {{ lead.firstName }} {{ lead.lastName }}</p>
+        <div>
+          <div *ngFor="let lead of leads">
+            <p *ngIf="lead.appointmentDate">Appointment: {{ lead.appointmentDate | date:'medium' }}, Name: {{ lead.firstName }} {{ lead.lastName }}</p>
+            <p *ngIf="!lead.appointmentDate">No appointment available, Name: {{ lead.firstName }} {{ lead.lastName }}</p>
+          </div>
         </div>
       </div>
     </mat-card>

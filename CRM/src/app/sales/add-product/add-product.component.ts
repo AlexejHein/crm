@@ -9,12 +9,9 @@ import { Products } from "../../models/products.class";
   styleUrls: ['./add-product.component.scss']
 })
 export class AddProductComponent {
-
     product = new Products();
     loading = false;
-    constructor(private firestore: AngularFirestore,
-                public dialogRef: MatDialogRef<AddProductComponent>) { }
-
+    constructor(private firestore: AngularFirestore, public dialogRef: MatDialogRef<AddProductComponent>) { }
     saveProduct() {
       this.loading = true;
       this.firestore.collection('products').add(this.product.toJSON())
@@ -23,5 +20,4 @@ export class AddProductComponent {
         });
       this.dialogRef.close();
     }
-
 }

@@ -7,7 +7,6 @@ import { BehaviorSubject} from "rxjs";
 })
 export class CustomerService {
   private _customers = new BehaviorSubject<any>([]);
-  currentCustomers = this._customers.asObservable();
 
   constructor(private firestore: AngularFirestore) {
     this.loadInitialData();

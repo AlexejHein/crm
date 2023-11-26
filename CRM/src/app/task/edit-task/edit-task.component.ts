@@ -24,7 +24,6 @@ export class EditTaskComponent {
       console.error('Keine Task-Daten im Dialog');
     }
   }
-
   ngOnInit(): void {
     this.firestore.collection('customers')
       .valueChanges({ idField: 'customIdName' })
@@ -32,7 +31,6 @@ export class EditTaskComponent {
         this.allCustomers = changes;
       });
   }
-
   saveTask() {
     this.loading = true;
     this.firestore.collection('tasks').doc(this.customIdName).update(this.task).then(() => {

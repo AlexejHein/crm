@@ -14,7 +14,6 @@ import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MatButtonModule} from "@angular/material/button";
 import { MatIconModule} from "@angular/material/icon";
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AuthGuard} from "./services/routeguard.service";
 import { AuthService} from "./services/auth.service";
 import { MenuComponent } from './menu/menu.component';
 import { MatSidenavModule} from "@angular/material/sidenav";

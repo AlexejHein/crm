@@ -7,13 +7,10 @@ import { BehaviorSubject} from "rxjs";
 })
 export class MailTemplateService {
   private _mailTemplates = new BehaviorSubject<any>([]);
-  currentMailTemplates = this._mailTemplates.asObservable();
-
 
   constructor(private firestore: AngularFirestore) {
     this.loadInitialData();
   }
-
   loadInitialData() {
     this.firestore.collection('mailTemplates')
       .valueChanges({idField: 'customIdName'})

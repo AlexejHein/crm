@@ -1,13 +1,15 @@
 <div class="dialog-container">
   <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
   <div mat-dialog-content>
-
-    <h1 mat-dialog-title>Add Customer</h1>
+    <form [formGroup]="loginForm!" (ngSubmit)="saveCustomer()">
+    <h1 mat-dialog-title>Add User</h1>
 
     <div>
+
       <mat-form-field class="mr-16" appearance="outline">
         <mat-label>First Name</mat-label>
-        <input [disabled]="loading" [(ngModel)]="customer.firstName" matInput placeholder="First Name">
+        <input [disabled]="loading" [(ngModel)]="customer.firstName" name="firstName" matInput placeholder="First Name">
+
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -47,12 +49,19 @@
       </mat-form-field>
     </div>
 
+    <div>
+      <mat-form-field appearance="outline" class="width-100">
+        <mat-label>Password</mat-label>
+        <input [disabled]="loading" [(ngModel)]="customer.password" matInput placeholder="Password" type="password">
+      </mat-form-field>
+    </div>
+
     <div mat-dialog-actions>
       <button [disabled]="loading" mat-button (click)="dialogRef.close()" >Cancel</button>
       <button [disabled]="loading" mat-button (click)="saveCustomer()" >Save</button>
 
     </div>
-
+    </form>
   </div>
 
 </div>

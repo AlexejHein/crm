@@ -6,7 +6,6 @@ import {MatDialog} from "@angular/material/dialog";
 import {DialogEditAddressComponent} from "../dialog-edit-address/dialog-edit-address.component";
 import {DialogEditCustomerComponent} from "../dialog-edit-customer/dialog-edit-customer.component";
 import { Task } from '../../models/tasks.class';
-import { Lead } from "../../models/leads.class";
 
 @Component({
   selector: 'app-customer-detail',
@@ -21,21 +20,15 @@ export class CustomerDetailComponent implements OnInit{
   taskCount = 0;
   leads: any[] = [];
 
-
-
-
-  constructor(private route:ActivatedRoute,
-              private firestore: AngularFirestore,
-              public dialog: MatDialog) {
+  constructor(private route:ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) {
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap =>{
       this.customerId = paramMap.get('id') || '';
-      this.getUser();  // Laden des Benutzers
+      this.getUser();
     });
   }
-
   getCustomerTasks() {
     this.firestore.collection('tasks', ref => ref.where('assignedTo', '==', this.customer.firstName + ' ' + this.customer.lastName))
       .get().subscribe(snapshot => {
@@ -53,7 +46,6 @@ export class CustomerDetailComponent implements OnInit{
         this.getCustomerLeads();
       })
   }
-
   getCustomerLeads() {
     this.firestore.collection('leads', ref => ref
       .where('assignedTo', '==', this.customer.firstName + ' ' + this.customer.lastName))
@@ -69,10 +61,6 @@ export class CustomerDetailComponent implements OnInit{
       });
     });
   }
-
-
-
-
   editMenu() {
     const dialog = this.dialog.open(DialogEditAddressComponent)
     dialog.componentInstance.customer = new Customer(this.customer.toJSON());

@@ -21,7 +21,6 @@ export class LoginComponent {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-
   login() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
@@ -39,13 +38,10 @@ export class LoginComponent {
       this.loginError = 'Please correct the errors in the form.';
     }
   }
-
-
   guestLogin() {
     this.loginForm.setValue({
       email: 'guest@login.com',
       password: '34cv42rttcf5tz3t4'
     });
   }
-
 }
