@@ -1,25 +1,39 @@
 export class Customer {
   firstName: string;
   lastName: string;
-  birthDate: number;
+  birthDate: string;
   street: string;
-  zipCode: number;
+  zipCode: string;
   city: string;
   email: string;
   sales: number;
   password: string;
+  id?: string;
 
-  constructor( obj?: any) {
-    this.firstName = obj ? obj.firstName : '';
-    this.lastName = obj ? obj.lastName : '';
-    this.birthDate = obj ? obj.birthDate : '';
-    this.street = obj ? obj.street : '';
-    this.zipCode = obj ? obj.zipCode : '';
-    this.city = obj ? obj.city : '';
-    this.email = obj ? obj.email: '';
-    this.sales = obj ? obj.sales : '';
-    this.password = obj ? obj.password : '';
+  constructor(obj?: any) {
+    if (obj) {
+      this.firstName = obj.firstName ?? '';
+      this.lastName = obj.lastName ?? '';
+      this.birthDate = obj.birthDate ?? '';
+      this.street = obj.street ?? '';
+      this.zipCode = obj.zipCode ?? '';
+      this.city = obj.city ?? '';
+      this.email = obj.email ?? '';
+      this.sales = obj.sales ?? 0;
+      this.password = obj.password ?? '';
+    } else {
+      this.firstName = '';
+      this.lastName = '';
+      this.birthDate = '';
+      this.street = '';
+      this.zipCode = '';
+      this.city = '';
+      this.email = '';
+      this.sales = 0;
+      this.password = '';
+    }
   }
+
 
   public toJSON(){
     return {
@@ -31,7 +45,8 @@ export class Customer {
       city: this.city,
       email: this.email,
       sales: this.sales,
-      password: this.password
+      password: this.password,
+      id: this.id ?? 'Standartwert'
     }
   }
 }

@@ -1,64 +1,75 @@
 <div class="dialog-container">
   <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
   <div mat-dialog-content>
-    <form [formGroup]="loginForm!" (ngSubmit)="saveCustomer()">
+    <form [formGroup]="loginForm" (ngSubmit)="saveCustomer()">
     <h1 mat-dialog-title>Add User</h1>
 
     <div>
 
       <mat-form-field class="mr-16" appearance="outline">
         <mat-label>First Name</mat-label>
-        <input [disabled]="loading" [(ngModel)]="customer.firstName" name="firstName" matInput placeholder="First Name">
-
-      </mat-form-field>
+        <input matInput formControlName="firstName" placeholder="First Name">
+        <mat-error *ngIf="loginForm?.get('firstName')?.errors?.['required']">First Name is required</mat-error>
+        </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Last Name</mat-label>
-        <input [disabled]="loading" [(ngModel)]="customer.lastName" matInput placeholder="Last Name">
+        <input matInput formControlName="lastName" placeholder="Last Name">
+        <mat-error *ngIf="loginForm?.get('lastName')?.errors?.['required']">First Name is required</mat-error>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="outline" class="width-100">
         <mat-label>E-Mail</mat-label>
-        <input [disabled]="loading" [(ngModel)]="customer.email" matInput placeholder="E-Mail">
+        <input matInput formControlName="email" placeholder="email">
+        <mat-error *ngIf="loginForm?.get('email')?.errors?.['required']">First Name is required</mat-error>
       </mat-form-field>
     </div>
-    <div>
-      <mat-form-field appearance="outline" class="width-100" >
-        <mat-label>Birth Date</mat-label>
-        <input [disabled]="loading" [(ngModel)]="customer.birthDate" matInput placeholder="Birth Date" [matDatepicker]="picker1">
-        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-        <mat-datepicker #picker1></mat-datepicker>
-      </mat-form-field>
+      <div>
+        <mat-form-field appearance="outline" class="width-100">
+          <mat-label>Birth Date</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="birthDate" placeholder="Birth Date">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-error *ngIf="loginForm.get('birthDate')?.errors?.['required']">
+            Birth date is required.
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-    </div>
-    <div>
+      <div>
       <mat-form-field appearance="outline" class="width-100">
         <mat-label>Street + House No.</mat-label>
-        <input [disabled]="loading" [(ngModel)]="customer.street" matInput placeholder="Street + House No.">
+        <input matInput formControlName="street" placeholder="Street + House No.">
+        <mat-error *ngIf="loginForm?.get('street')?.errors?.['required']">First Name is required</mat-error>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="outline"  class="mr-16" >
         <mat-label>Zip code</mat-label>
-        <input [disabled]="loading" [(ngModel)]="customer.zipCode" matInput placeholder="Zip code">
+        <input matInput formControlName="zipCode" placeholder="Zip-Code">
+        <mat-error *ngIf="loginForm?.get('zipCode')?.errors?.['required']">First Name is required</mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>City</mat-label>
-        <input [disabled]="loading" [(ngModel)]="customer.city" matInput placeholder="City">
+        <input matInput formControlName="city" placeholder="City">
+        <mat-error *ngIf="loginForm?.get('city')?.errors?.['required']">First Name is required</mat-error>
       </mat-form-field>
     </div>
 
     <div>
       <mat-form-field appearance="outline" class="width-100">
         <mat-label>Password</mat-label>
-        <input [disabled]="loading" [(ngModel)]="customer.password" matInput placeholder="Password" type="password">
+        <input matInput formControlName="password" placeholder="Password">
+        <mat-error *ngIf="loginForm?.get('password')?.errors?.['required']">First Name is required</mat-error>
       </mat-form-field>
     </div>
 
     <div mat-dialog-actions>
-      <button [disabled]="loading" mat-button (click)="dialogRef.close()" >Cancel</button>
-      <button [disabled]="loading" mat-button (click)="saveCustomer()" >Save</button>
+      <button [disabled]="loading" mat-button (click)="dialogRef.close()" type="button">Cancel</button>
+
+      <button [disabled]="loading || !loginForm.valid" mat-button >Save</button>
+
 
     </div>
     </form>

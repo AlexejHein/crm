@@ -6,7 +6,8 @@ import { AuthService } from "../../services/auth.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Observable} from "rxjs";
 import firebase from "firebase/compat";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+
 @Component({
   selector: 'app-dialog-add-costumer',
   templateUrl: './dialog-add-costumer.component.html',
@@ -24,8 +25,9 @@ export class DialogAddCostumerComponent {
   city: string | undefined;
   email: string | undefined;
   password: string | undefined;
-  loginForm: FormGroup | undefined;
+  loginForm: FormGroup;
   loginError: string = '';
+
 
   private user: Observable<firebase.User | null>;
 
@@ -35,21 +37,21 @@ export class DialogAddCostumerComponent {
               public dialogRef: MatDialogRef<DialogAddCostumerComponent>,
               private fb: FormBuilder) {
     this.user = afAuth.authState;
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      street: ['', [Validators.required]],
-      zipCode: ['', [Validators.required]],
-      birthDate: ['', [Validators.required]],
+    this.loginForm = new FormGroup({
+      firstName: new FormControl ('', [Validators.required, Validators.minLength(2)]),
+      lastName: new FormControl ('', [Validators.required, Validators.minLength(2)]),
+      birthDate: new FormControl ('', [Validators.required]),
+      street: new FormControl ('', [Validators.required, Validators.minLength(2)]),
+      zipCode: new FormControl ('', [Validators.required, Validators.minLength(5)]),
+      city: new FormControl ('', [Validators.required, Validators.minLength(2)]),
+      email: new FormControl ('', [Validators.required, Validators.email]),
+      password: new FormControl ('', [Validators.required, Validators.minLength(5)])
     });
   }
 
   saveCustomer() {
     if (this.loginForm?.valid) {
-      this.customer = this.loginForm.value;
+      this.customer = new Customer(this.loginForm.value);
       this.createUser();
     } else {
       this.loginError = 'Please correct the errors in the form.';

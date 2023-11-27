@@ -11,6 +11,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent {
+  customer = new Customer();
   allCustomers: any[] = [];
 
   constructor(public dialog: MatDialog, private firestore: AngularFirestore) {}
