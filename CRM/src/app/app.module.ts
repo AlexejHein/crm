@@ -49,6 +49,8 @@ import {MatChipsModule} from "@angular/material/chips";
 import { EditTaskComponent } from './task/edit-task/edit-task.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatExpansionModule} from "@angular/material/expansion";
+import { ImpressComponent } from './impress/impress.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import {MatExpansionModule} from "@angular/material/expansion";
     ProductDetailComponent,
     AddTaskComponent,
     TaskListComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    ImpressComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

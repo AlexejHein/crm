@@ -12,6 +12,8 @@ import {MarketingComponent} from "./marketing/marketing.component";
 import {CustomerDetailComponent} from "./customer/customer-detail/customer-detail.component";
 import {DialogEditLeadComponent} from "./management/dialog-edit-lead/dialog-edit-lead.component";
 import {ProductDetailComponent} from "./sales/product-detail/product-detail.component";
+import {ImpressComponent} from "./impress/impress.component";
+import {PrivacyPolicyComponent} from "./privacy-policy/privacy-policy.component";
 
 const routes: Routes = [
   {
@@ -56,6 +58,14 @@ const routes: Routes = [
   {
     path: 'sales/:id', canActivate: [AuthGuard],
     component: ProductDetailComponent
+  },
+  {
+    path: 'impress', canActivate: [AuthGuard],
+    component: ImpressComponent
+  },
+  {
+    path: 'privacy-policy', canActivate: [AuthGuard],
+    component: PrivacyPolicyComponent
   }
 ];
 
