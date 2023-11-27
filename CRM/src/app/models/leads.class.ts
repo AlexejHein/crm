@@ -6,46 +6,66 @@ export class Lead {
   email: string;
   phoneNumber: string;
   companyName: string;
-  updatedAt: string;
   actions?: string;
   comments?: string;
   status?: string;
   source?: string;
   appointmentDate?: Date;
 
-  constructor( obj?: any) {
-    this.createdAt = obj ? obj.createdAt : '';
-    this.assignedTo = obj ? obj.assignedTo : '';
-    this.firstName = obj ? obj.firstName : '';
-    this.lastName = obj ? obj.lastName : '';
-    this.email = obj ? obj.email : '';
-    this.phoneNumber = obj ? obj.phoneNumber : '';
-    this.companyName = obj ? obj.companyName : '';
-    this.updatedAt = obj ? obj.updatedAt : '';
-    this.comments = obj ? obj.comments : '';
-    this.actions = obj ? obj.actions : '';
-    this.status = obj ? obj.status : '';
-    this.source = obj ? obj.source : '';
-    this.appointmentDate = obj ? obj.appointmentDate : '';
+  constructor(obj: any = {}) {
+    const {
+      createdAt = '',
+      assignedTo = '',
+      firstName = '',
+      lastName = '',
+      email = '',
+      phoneNumber = '',
+      companyName = '',
+      actions,
+      comments,
+      status,
+      source,
+      appointmentDate,
+    } = obj;
+
+    this.createdAt = createdAt;
+    this.assignedTo = assignedTo;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.phoneNumber = phoneNumber;
+    this.companyName = companyName;
+    this.actions = actions;
+    this.comments = comments;
+    this.status = status;
+    this.source = source;
+    this.appointmentDate = appointmentDate || null; // Handle Date type separately
   }
 
-  public toJSON(){
-    return {
-      createdAt: this.createdAt,
-      assignedTo: this.assignedTo,
-      firstName: this.firstName,
-      lastName: this.lastName,
-      email: this.email,
-      phoneNumber: this.phoneNumber,
-      companyName: this.companyName,
-      updatedAt: this.updatedAt,
-      comments: this.comments,
-      actions: this.actions,
-      status: this.status,
-      source: this.source,
-      appointmentDate: this.appointmentDate
-    }
+  public toJSON() {
+    const data = {
+      createdAt: this.createdAt ?? null,
+      assignedTo: this.assignedTo ?? null,
+      firstName: this.firstName ?? null,
+      lastName: this.lastName ?? null,
+      email: this.email ?? null,
+      phoneNumber: this.phoneNumber ?? null,
+      companyName: this.companyName ?? null,
+      comments: this.comments ?? null,
+      actions: this.actions ?? null,
+      status: this.status ?? null,
+      source: this.source ?? null,
+      appointmentDate: this.appointmentDate ?? null
+    };
+
+    (Object.keys(data) as Array<keyof typeof data>).forEach(key => {
+      if (data[key] === null) {
+        delete data[key];
+      }
+    });
+
+    return data;
   }
+
+
 }
-
-

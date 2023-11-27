@@ -29,6 +29,7 @@ export class DialogAddCostumerComponent {
   loginError: string = '';
 
 
+
   private user: Observable<firebase.User | null>;
 
   constructor(private firestore: AngularFirestore,

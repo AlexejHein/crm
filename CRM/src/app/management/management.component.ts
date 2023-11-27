@@ -12,6 +12,7 @@ import { DialogAddLeadComponent } from "./dialog-add-lead/dialog-add-lead.compon
   styleUrls: ['./management.component.scss']
 })
 export class ManagementComponent implements AfterViewInit, OnInit {
+  leads: Lead[] = [];
   displayedColumns: string[] = ['createdAt', 'assignedTo', 'name', 'email', 'phoneNumber', 'companyName', 'actions'];
   dataSource = new MatTableDataSource<Lead>();
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;

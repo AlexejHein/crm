@@ -11,7 +11,7 @@
         <input matInput formControlName="firstName" placeholder="First Name">
         <mat-error *ngIf="loginForm?.get('firstName')?.errors?.['required']">First Name is required</mat-error>
         <mat-error *ngIf="loginForm?.get('firstName')?.errors?.['minlength']">First Name must be at least 2 characters long</mat-error>
-        </mat-form-field>
+      </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Last Name</mat-label>
