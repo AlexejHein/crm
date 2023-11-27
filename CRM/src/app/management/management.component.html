@@ -1,5 +1,17 @@
 <app-menu></app-menu>
 <div class="content pd-16">
+  <mat-card class="pd-16 m16">
+    <mat-card-title>Leads</mat-card-title>
+    <mat-card-content>
+      On the 'Leads' page of the CRM app, users can create new leads and assign them to specific users.
+      The status of each lead is visually represented by three colors. If a lead is colorless,
+      it means it is new and yet to be assigned. When a lead is marked in green, it indicates that someone is
+      already working on it. A calendar or appointment icon next to a lead signifies that an appointment needs to be scheduled,
+      and this task is then allocated to the assigned user. If a lead is marked in red, it can be deleted,
+      as this color indicates that the lead is unsuitable or not viable for further pursuit.
+      This color-coding system provides a quick and efficient way to monitor the status and progression of leads in the app.
+    </mat-card-content>
+  </mat-card>
 
 <h2>Leads</h2>
 <button (click)="open()" class="add-lead-btn" mat-flat-button color="primary" matTooltip="Add Lead">

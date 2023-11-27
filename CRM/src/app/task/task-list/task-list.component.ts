@@ -14,7 +14,7 @@ export class TaskListComponent {
   @Input() title: string | undefined;
   @Input() tasks!: any[] | undefined;
   @Input() listId: string | undefined;
-  @Input() taskId: string = '';
+  @Input() taskId: string | undefined;
 
 
   constructor(private firebase: AngularFirestore, public dialog: MatDialog) { }
@@ -65,7 +65,7 @@ export class TaskListComponent {
       return;
     }
     this.firebase.collection('tasks').doc(task.customIdName).update(task)
-      .then(() => console.log("Update erfolgreich für Task:", task))
+      .then()
       .catch((e: any) => console.error("Update fehlgeschlagen für Task:", task, e));
   }
     edit(task: Task) {

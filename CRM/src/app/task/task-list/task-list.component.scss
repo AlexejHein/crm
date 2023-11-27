@@ -1,73 +1,74 @@
-.example-container {
-  width: 300px;
-  max-width: 100%;
-  margin: 0 25px 25px 0;
-  display: inline-block;
-  vertical-align: top;
 
-}
+  .example-container {
+    width: 300px;
+    max-width: 100%;
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
 
-.example-list {
-  min-height: 60px;
-  border-radius: 4px;
-  display: block;
-}
-
-.task-box {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  border-radius: 5px;
-  background: #f0ffff;
-  box-shadow:  -7px -7px 5px #ddebeb, 7px 7px 5px #ffffff;
-
-  &:hover {
-    background-color: rgb(240, 242, 255);
-    cursor: grab;
   }
-}
 
-.task-title {
-  font-size: 16px;
-  font-weight: 600;
-}
+  .example-list {
+    min-height: 60px;
+    border-radius: 4px;
+    display: block;
+  }
 
-.task-desc {
-  font-size: 14px;
-  font-weight: 400;
-}
+  .task-box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 5px;
+    background: #f0ffff;
+    box-shadow: -7px -7px 5px #ddebeb, 7px 7px 5px #ffffff;
 
-mat-card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  margin-top: 10px;
-}
+    &:hover {
+      background-color: rgb(240, 242, 255);
+      cursor: grab;
+    }
+  }
 
-.priority-low {
-  background-color: rgba(0, 128, 0, 0.5);
-  color: #ffffff;
-  padding: 5px  10px ;
-  border-radius: 4px;
-}
+  .task-title {
+    font-size: 16px;
+    font-weight: 600;
+  }
 
-.priority-medium {
-  background-color: rgba(255, 255, 0, 0.5);
-  color: rgba(10, 10, 10, 0.75);
-  padding: 5px  10px ;
-  border-radius: 4px;
-}
+  .task-desc {
+    font-size: 14px;
+    font-weight: 400;
+  }
 
-.priority-high {
-  background-color: rgba(255, 0, 0, 0.5);
-  color: #ffffff;
-  padding: 5px  10px ;
-  border-radius: 4px;
-}
+  mat-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .priority-low {
+    background-color: rgba(0, 128, 0, 0.5);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+
+  .priority-medium {
+    background-color: rgba(255, 255, 0, 0.5);
+    color: rgba(10, 10, 10, 0.75);
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+
+  .priority-high {
+    background-color: rgba(255, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
 

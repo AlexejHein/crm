@@ -1,5 +1,16 @@
 <app-menu></app-menu>
 <mat-card class="content">
+  <mat-card>
+    <mat-card-title>Send Email</mat-card-title>
+    <mat-card-content>
+      In the "Email Templates" area of the app, users have the convenience of crafting
+      customizable email templates featuring the [name] placeholder. This smart functionality enables them to
+      personalize each email effortlessly, making it appear tailor-made for each recipient. Once created,
+      these templates can be saved and reused multiple times, streamlining email communication and enhancing the
+      overall efficiency of correspondence. This feature is particularly useful for frequent email interactions,
+      ensuring a personal touch in every message sent.
+    </mat-card-content>
+  </mat-card>
 <mat-tab-group>
 
   <mat-tab label="Mailing Lists">
@@ -69,53 +80,7 @@
         <button mat-raised-button (click)="save()" color="primary">Save Template</button>
       </mat-card-content>
     </mat-card>
-    <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Creating Email Templates with Name Placeholder
-          </mat-panel-title>
-        </mat-expansion-panel-header>
 
-        <mat-card class="pd-16">
-          <mat-card-title>Introduction to Email Templates</mat-card-title>
-          <mat-card-content>
-            <p>Email templates are pre-formatted and pre-designed emails that are used to communicate messages with a consistent layout and structure. They are widely used in marketing, customer service, and communication campaigns. One of the key features of these templates is the use of placeholders – special markers that are replaced with actual data when the email is sent out.</p>
-          </mat-card-content>
-
-          <mat-card-title>Using the [name] Placeholder</mat-card-title>
-          <mat-card-content>
-            <p>In our email templates, we use the placeholder [name] to personalize each email. This placeholder is a marker that will be replaced with the recipient’s actual name when the email is sent. Personalizing emails in this manner helps to create a more engaging and direct connection with the recipient, making your communication more effective.</p>
-          </mat-card-content>
-
-          <mat-card-title>How to Create a Template with [name] Placeholder</mat-card-title>
-          <mat-card-content>
-            <h3>Design Your Template:</h3>
-            <p>Start by designing your email template. This could be done using HTML and CSS for styling. Ensure that the email design aligns with your brand and is visually appealing.</p>
-            <h3>Insert the Placeholder:</h3>
-            <p>Wherever you want the recipient's name to appear, insert the [name] placeholder. For example, if you want the email to start with a greeting, you could write: “Dear [name],” or “Hello [name],”.</p>
-            <h3>Template Processing:</h3>
-            <p>When you send the email, your email system should be set up to replace the [name] placeholder with the actual name of each recipient. This is typically handled by your email sending platform or CRM system.</p>
-            <h3>Testing:</h3>
-            <p>Before sending out the email to your recipients, it’s crucial to test the template. Send a test email to yourself or your team to ensure that the placeholder is correctly replaced with a name and that the email layout looks as expected.</p>
-          </mat-card-content>
-
-          <mat-card-title>Benefits of Using [name] Placeholder</mat-card-title>
-          <mat-card-content>
-            <ul>
-              <li><strong>Personalization:</strong> Personalized emails have a higher engagement rate as they are more relevant to the recipient.</li>
-              <li><strong>Efficiency:</strong> Using a placeholder saves time as you can use the same template for multiple recipients, without having to manually change each email.</li>
-              <li><strong>Consistency:</strong> It ensures consistency in your messages while still allowing for a level of personalization.</li>
-            </ul>
-          </mat-card-content>
-
-          <mat-card-title>Conclusion</mat-card-title>
-          <mat-card-content>
-            <p>Using the [name] placeholder in your email templates is a simple yet powerful way to personalize your mass email communications. It helps to create a more personal connection with your audience, improving the overall impact of your email campaigns.</p>
-          </mat-card-content>
-        </mat-card>
-      </mat-expansion-panel>
-    </mat-accordion>
 
 
   </mat-tab>

@@ -1,5 +1,19 @@
 <app-menu></app-menu>
 
+
+<div class="content-todo">
+  <mat-card class="m16 pd-16">
+    <mat-card-title>Info</mat-card-title>
+    <mat-card-content>
+      Here, you can create tasks and assign them to users.
+      Through a selection system, you can also assign a priority level to each task,
+      indicating how urgent it is. The app features a drag and drop system, allowing you to easily move tasks around.
+      This functionality is particularly useful for organizing and reprioritizing tasks efficiently,
+      ensuring that users focus on the most urgent items first. It enhances task management and helps in maintaining a
+      streamlined workflow.
+    </mat-card-content>
+  </mat-card>
+
 <button (click)="openDialog()" class="add-customer-btn" mat-fab color="primary" matTooltip="Add User">
   <mat-icon>add</mat-icon>
 </button>
@@ -12,5 +26,6 @@
     <app-task-list title="Awaiting Feedback" [tasks]="awaitingFeedback" listId="awaitingFeedbackList"></app-task-list>
     <app-task-list title="Done" [tasks]="done" listId="doneList"></app-task-list>
   </div>
+</div>
 </div>
 

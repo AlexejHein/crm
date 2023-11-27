@@ -1,6 +1,7 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
-    <mat-icon class="logo">data_exploration</mat-icon>
+    <span class="logo">CRM</span>
+
     <ul>
       <li><a class="link-style" routerLink="/dashboard"><mat-icon>bar_chart_4_bars</mat-icon>Dashboard</a></li>
       <li><a class="link-style" routerLink="/customer"><mat-icon>person</mat-icon>Users</a> </li>
@@ -9,17 +10,21 @@
       <li><a class="link-style" routerLink="/task"><mat-icon>task</mat-icon>Task Management</a></li>
       <li><a class="link-style" routerLink="/marketing"><mat-icon>online_prediction</mat-icon>Marketing</a></li>
       <li><a class="link-style" (click)="logout()"><mat-icon>exit_to_app</mat-icon>Logout</a></li>
-
     </ul>
 
+    <ul class="bottom-nav">
+      <li><mat-icon>info</mat-icon></li>
+      <li class="b-n">Impress</li>
+      <li class="b-n">Privacy Police</li>
+    </ul>
   </mat-drawer>
 
   <mat-toolbar color="primary">
     <button type="button" mat-icon-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
+    simple CRM
   </mat-toolbar>
-
 
 </mat-drawer-container>
 <router-outlet></router-outlet>

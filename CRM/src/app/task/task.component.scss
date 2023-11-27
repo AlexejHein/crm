@@ -1,51 +1,58 @@
-.content{
-  margin: 20px;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  .list-item{
-    width: 90%;
+.content-todo {
+  margin-top: 80px;
+  .content {
+    margin: 20px;
+    width: 100vw;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    overflow: hidden;
+
+    .list-item {
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
   }
-}
-.example-container {
-  width: 300px;
-  max-width: 100%;
-  margin: 0 25px 25px 0;
-  display: inline-block;
-  vertical-align: top;
-}
-.cdk-drag-preview {
-  box-sizing: border-box;
-  border-radius: 4px;
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-  0 8px 10px 1px rgba(0, 0, 0, 0.14),
-  0 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
 
-.cdk-drag-placeholder {
-  opacity: 0;
-}
+  .example-container {
+    width: 300px;
+    max-width: 100%;
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+  }
 
-.cdk-drag-animating {
-  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-}
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
 
-.example-box:last-child {
-  border: none;
-}
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
 
-.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
-  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-}
-.add-customer-btn{
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  background: linear-gradient(45deg, #2196F3 0%, #21CBF3 100%);
-  box-shadow:  -3px -3px 5px #ddebeb,
-  3px 3px 5px #ffffff;
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .example-box:last-child {
+    border: none;
+  }
+
+  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .add-customer-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: linear-gradient(45deg, #2196F3 0%, #21CBF3 100%);
+    box-shadow: -3px -3px 5px #ddebeb,
+    3px 3px 5px #ffffff;
+  }
 }

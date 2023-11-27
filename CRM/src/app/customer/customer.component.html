@@ -1,4 +1,18 @@
 <app-menu></app-menu>
+<div class="content">
+
+  <mat-card>
+    <mat-card-title>Users</mat-card-title>
+    <mat-card-content>
+      On the 'Users' page of the CRM app, users can be created and managed.
+      During the creation or editing process, a password is assigned to each user.
+      With this assigned password and their email address, users can subsequently log in to the app.
+      In the detailed view of a user's profile, there is an overview of their pending tasks.
+      This includes whether they have any outstanding 'To-dos' or appointments,
+      or if there are any they need to schedule. This feature helps in monitoring and managing user
+      activities and responsibilities within the app.
+    </mat-card-content>
+  </mat-card>
 <mat-card>
   <table class="user-table">
     <tr class="pd-16">
@@ -19,3 +33,4 @@
 <button (click)="openDialog()" class="add-customer-btn" mat-fab color="primary" matTooltip="Add User">
   <mat-icon>add</mat-icon>
 </button>
+</div>

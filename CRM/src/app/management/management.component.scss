@@ -1,69 +1,77 @@
-.mat-elevation{
-  padding: 16px;
-  border-radius: 5px;
-  background: #f0ffff;
-  box-shadow:  -7px -7px 5px #ddebeb,
-  7px 7px 5px #ffffff;
-  table{
+.content {
+  margin-top: 80px;
+  .mat-elevation {
     padding: 16px;
     border-radius: 5px;
     background: #f0ffff;
-    box-shadow:  -7px -7px 5px #ddebeb,
+    box-shadow: -7px -7px 5px #ddebeb,
     7px 7px 5px #ffffff;
+
+    table {
+      padding: 16px;
+      border-radius: 5px;
+      background: #f0ffff;
+      box-shadow: -7px -7px 5px #ddebeb,
+      7px 7px 5px #ffffff;
+    }
+
+    mat-paginator {
+      background: #f0ffff;
+      box-shadow: -7px -7px 5px #ddebeb,
+      7px 7px 5px #ffffff;
+    }
   }
-  mat-paginator{
+
+  .add-lead-btn {
+    position: fixed;
+    background: linear-gradient(45deg, #2196F3 0%, #21CBF3 100%);
+    box-shadow: -3px -3px 5px #ddebeb,
+    3px 3px 5px #ffffff;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+  }
+
+  .info {
+    width: 600px;
+    padding: 16px;
+    border-radius: 5px;
     background: #f0ffff;
-    box-shadow:  -7px -7px 5px #ddebeb,
+    box-shadow: -7px -7px 5px #ddebeb,
     7px 7px 5px #ffffff;
   }
-}
-.add-lead-btn{
-  position: fixed;
-  background: linear-gradient(45deg, #2196F3 0%, #21CBF3 100%);
-  box-shadow:  -3px -3px 5px #ddebeb,
-  3px 3px 5px #ffffff;
-  bottom: 20px;
-  right: 20px;
-  z-index: 100;
-}
-.info{
-  width: 600px;
-  padding: 16px;
-  border-radius: 5px;
-  background: #f0ffff;
-  box-shadow:  -7px -7px 5px #ddebeb,
-  7px 7px 5px #ffffff;
-}
-.status-history{
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: center;
 
-  .status-item {
+  .status-history {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 5px;
-    width: 120px;
-    margin: 5px;
-    padding: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.31);
+
+    .status-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 120px;
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.31);
+    }
+  }
+
+  .status-new {
+    // 'New'
+  }
+
+  .status-working {
+    background-color: lightgreen;
+  }
+
+  .status-closed {
+    background-color: lightyellow;
+  }
+
+  .status-unqualified {
+    background-color: lightcoral;
   }
 }
-.status-new {
-  // 'New'
-}
-
-.status-working {
-  background-color: lightgreen;
-}
-
-.status-closed {
-  background-color: lightyellow;
-}
-
-.status-unqualified {
-  background-color: lightcoral;
-}
-
