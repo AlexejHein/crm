@@ -44,4 +44,7 @@ export class LoginComponent {
       password: '34cv42rttcf5tz3t4'
     });
   }
+  signUp() {
+    console.log('Sign up clicked')
+  }
 }

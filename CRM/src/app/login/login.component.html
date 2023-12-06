@@ -1,10 +1,7 @@
 <div class="content">
-<mat-card class="login-card pd-16">
-  <mat-card-content>
-    <mat-card-header>
-      <h2 class="login-text">LOGIN</h2>
-    </mat-card-header>
-  </mat-card-content>
+ <mat-tab-group>
+   <mat-tab label="Login">
+      <mat-card class="login-card pd-16">
   <form [formGroup]="loginForm" (ngSubmit)="login()">
 
     <mat-card *ngIf="loginError" class="error-message">
@@ -36,4 +33,55 @@
   </form>
 
 </mat-card>
+   </mat-tab>
+   <mat-tab class="signup" label="Sign Up">
+     <mat-card class="signUp">
+     <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+       <mat-card *ngIf="loginError" class="error-message">
+         {{ loginError }}
+       </mat-card>
+       <div class="border">
+         <mat-form-field appearance="outline" class="width-100">
+           <mat-label>Frist Name</mat-label>
+           <input type="email" formControlName="email" matInput >
+           <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</mat-error>
+           <mat-error *ngIf="loginForm.get('email')?.errors?.['email']">Email is invalid</mat-error>
+         </mat-form-field>
+       </div>
+       <div class="border">
+         <mat-form-field appearance="outline" class="width-100">
+           <mat-label>Last Name</mat-label>
+           <input type="email" formControlName="email" matInput >
+           <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</mat-error>
+           <mat-error *ngIf="loginForm.get('email')?.errors?.['email']">Email is invalid</mat-error>
+         </mat-form-field>
+       </div>
+       <div class="border">
+         <mat-form-field appearance="outline" class="width-100">
+           <mat-label>Email</mat-label>
+           <input type="email" formControlName="email" matInput >
+           <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</mat-error>
+           <mat-error *ngIf="loginForm.get('email')?.errors?.['email']">Email is invalid</mat-error>
+         </mat-form-field>
+       </div>
+
+       <div class="border">
+         <mat-form-field appearance="outline" class="width-100">
+           <mat-label>Enter your password</mat-label>
+           <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+           <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</mat-error>
+           <mat-error *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long</mat-error>
+         </mat-form-field>
+       </div>
+
+
+       <div class="btn-login width-100">
+         <button class="btn-guest" mat-flat-button  (click)="signUp()">Guest Login</button>
+       </div>
+     </form>
+
+     </mat-card>
+  </mat-tab>
+ </mat-tab-group>
 </div>
