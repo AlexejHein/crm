@@ -23,7 +23,7 @@
     <button type="button" mat-icon-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    simple CRM
+    simple CRM - {{ currentUserName | async }}
   </mat-toolbar>
 
 </mat-drawer-container>

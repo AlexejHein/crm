@@ -51,6 +51,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatExpansionModule} from "@angular/material/expansion";
 import { ImpressComponent } from './impress/impress.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { SuccessDialogComponent } from './login/success-dialog/success-dialog.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     TaskListComponent,
     EditTaskComponent,
     ImpressComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    SuccessDialogComponent
   ],
   imports: [
     BrowserModule,
