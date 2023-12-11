@@ -19,6 +19,9 @@ export class AuthService {
   createUser(email: string, password: string) {
     return this.afAuth.createUserWithEmailAndPassword(email, password);
   }
+  signUp(email: string, password: string): Promise<any> {
+    return this.afAuth.createUserWithEmailAndPassword(email, password);
+  }
   isAuthenticated() {
     return this.user.pipe(
       map(user => !!user),

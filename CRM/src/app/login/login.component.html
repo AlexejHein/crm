@@ -36,52 +36,55 @@
    </mat-tab>
    <mat-tab class="signup" label="Sign Up">
      <mat-card class="signUp">
-     <form [formGroup]="loginForm" (ngSubmit)="login()">
+       <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
 
-       <mat-card *ngIf="loginError" class="error-message">
-         {{ loginError }}
-       </mat-card>
-       <div class="border">
-         <mat-form-field appearance="outline" class="width-100">
-           <mat-label>Frist Name</mat-label>
-           <input type="email" formControlName="email" matInput >
-           <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</mat-error>
-           <mat-error *ngIf="loginForm.get('email')?.errors?.['email']">Email is invalid</mat-error>
-         </mat-form-field>
-       </div>
-       <div class="border">
-         <mat-form-field appearance="outline" class="width-100">
-           <mat-label>Last Name</mat-label>
-           <input type="email" formControlName="email" matInput >
-           <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</mat-error>
-           <mat-error *ngIf="loginForm.get('email')?.errors?.['email']">Email is invalid</mat-error>
-         </mat-form-field>
-       </div>
-       <div class="border">
-         <mat-form-field appearance="outline" class="width-100">
-           <mat-label>Email</mat-label>
-           <input type="email" formControlName="email" matInput >
-           <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</mat-error>
-           <mat-error *ngIf="loginForm.get('email')?.errors?.['email']">Email is invalid</mat-error>
-         </mat-form-field>
-       </div>
+         <mat-card *ngIf="signUpError" class="error-message">
+           {{ signUpError }}
+         </mat-card>
 
-       <div class="border">
-         <mat-form-field appearance="outline" class="width-100">
-           <mat-label>Enter your password</mat-label>
-           <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
-           <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</mat-error>
-           <mat-error *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long</mat-error>
-         </mat-form-field>
-       </div>
+         <div class="border">
+           <mat-form-field appearance="outline" class="width-100">
+             <mat-label>First Name</mat-label>
+             <input type="text" formControlName="firstName" matInput>
+             <mat-error *ngIf="signUpForm.get('firstName')?.errors?.['required']">First name is required</mat-error>
+             <mat-error *ngIf="signUpForm.get('firstName')?.errors?.['minLength']">First name must be at least 2 characters long</mat-error>
+           </mat-form-field>
+         </div>
 
+         <div class="border">
+           <mat-form-field appearance="outline" class="width-100">
+             <mat-label>Last Name</mat-label>
+             <input type="text" formControlName="lastName" matInput>
+             <mat-error *ngIf="signUpForm.get('lastName')?.errors?.['required']">Last name is required</mat-error>
+             <mat-error *ngIf="signUpForm.get('lastName')?.errors?.['minLength']">Last name must be at least 2 characters long</mat-error>
+           </mat-form-field>
+         </div>
 
-       <div class="btn-login width-100">
-         <button class="btn-guest" mat-flat-button  (click)="signUp()">Guest Login</button>
-       </div>
-     </form>
+         <div class="border">
+           <mat-form-field appearance="outline" class="width-100">
+             <mat-label>Email</mat-label>
+             <input type="email" formControlName="email" matInput>
+             <mat-error *ngIf="signUpForm.get('email')?.errors?.['required']">Email is required</mat-error>
+             <mat-error *ngIf="signUpForm.get('email')?.errors?.['email']">Email is invalid</mat-error>
+           </mat-form-field>
+         </div>
 
+         <div class="border">
+           <mat-form-field appearance="outline" class="width-100">
+             <mat-label>Enter your password</mat-label>
+             <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+             <mat-error *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required</mat-error>
+             <mat-error *ngIf="signUpForm.get('password')?.errors?.['minLength']">Password must be at least 6 characters long</mat-error>
+           </mat-form-field>
+         </div>
+
+         <div class="btn-login width-100">
+           <button mat-flat-button type="submit">Sign Up</button>
+         </div>
+
+       </form>
      </mat-card>
-  </mat-tab>
+   </mat-tab>
+
  </mat-tab-group>
 </div>
