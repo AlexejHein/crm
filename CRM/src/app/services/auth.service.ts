@@ -27,8 +27,8 @@ export class AuthService {
 
   getCurrentUser(): Observable<string> {
     return this.user.pipe(
-      map(user => user ? user.email : 'Gast'),
-      catchError(() => of('Gast'))
+      map(user => user ? user.email : 'Guest'),
+      catchError(() => of('Guest'))
     );
   }
 

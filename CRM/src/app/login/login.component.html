@@ -1,6 +1,6 @@
 <div class="content">
  <mat-tab-group>
-   <mat-tab label="Login">
+   <mat-tab class="tab" label="Login">
       <mat-card class="login-card pd-16">
   <form [formGroup]="loginForm" (ngSubmit)="login()">
 
@@ -34,7 +34,7 @@
 
 </mat-card>
    </mat-tab>
-   <mat-tab class="signup" label="Sign Up">
+   <mat-tab class="signup tab" label="Sign Up">
      <mat-card class="signUp">
        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
 

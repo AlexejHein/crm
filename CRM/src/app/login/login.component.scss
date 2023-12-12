@@ -9,15 +9,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow:  -7px -7px 5px #ddebeb,
-    7px 7px 5px #ffffff;
+    box-shadow:  -7px -7px 5px #ddebeb, 7px 7px 5px #ffffff;
+    @media (max-width: 425px) {
+      box-shadow: none;
+    }
   }
   .login-text{
     font-size: 50px;
     font-weight: 700;
   }
   form{
-    width: 100%;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,7 +69,7 @@
     width: 100%;
     height: 50px;
     font-size: 20px;
-    color: #949494;
+    color: #3d3d3d;
     background: linear-gradient(45deg, #9f8a33 0%, #ffffff 100%);
     border-radius: 5px;
     box-shadow:  -3px -3px 5px #ddebeb,
