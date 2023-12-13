@@ -52,6 +52,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { ImpressComponent } from './impress/impress.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { SuccessDialogComponent } from './login/success-dialog/success-dialog.component';
+import { DialogSaveLeadComponent } from './management/dialog-save-lead/dialog-save-lead.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { SuccessDialogComponent } from './login/success-dialog/success-dialog.co
     EditTaskComponent,
     ImpressComponent,
     PrivacyPolicyComponent,
-    SuccessDialogComponent
+    SuccessDialogComponent,
+    DialogSaveLeadComponent
   ],
   imports: [
     BrowserModule,
