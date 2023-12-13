@@ -1,13 +1,27 @@
-dialog-container
-.dialog{
+.dialog-container {
   width: 500px;
-  color: #949494;
-  border-radius: 5px;
-  background: #f0ffff;
-  box-shadow: inset -7px -7px 15px #b6c2c2, inset 7px 7px 15px #ffffff;
-  h1{
-    margin-bottom: 0;
+  .dialog {
+    width: 100%;
     color: #949494;
+    border-radius: 5px;
+    background: #f0ffff;
+
+    h1 {
+      margin-bottom: 0;
+      color: #949494;
+    }
+
+    .action-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        margin-left: 10px;
+      }
+    }
   }
 }
+
 

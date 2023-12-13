@@ -4,55 +4,56 @@
 
     <h1 mat-dialog-title>Add Task</h1>
 
-    <div>
-      <mat-form-field class="mr-16 width-100" appearance="outline">
-        <mat-label>Title</mat-label>
-        <input [disabled]="loading" [(ngModel)]="task.title" matInput placeholder="Title">
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field appearance="outline" class="width-100">
-        <mat-label>Description</mat-label>
-        <textarea [disabled]="loading" [(ngModel)]="task.description" matInput placeholder="Description"></textarea>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field appearance="outline" class="width-100">
-        <mat-label>Priority</mat-label>
-        <mat-select [(ngModel)]="task.priority">
-          <mat-option value="low">Low</mat-option>
-          <mat-option value="urgent">Urgent</mat-option>
-          <mat-option value="medium">Medium</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field appearance="outline" class="width-100">
-        <mat-label>Assigned To</mat-label>
-        <mat-select [(ngModel)]="task.assignedTo">
-          <mat-option *ngFor="let customer of allCustomers" [value]="customer.firstName + ' ' + customer.lastName">
-            {{ customer.firstName }} {{ customer.lastName }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field appearance="outline" class="width-100">
-        <mat-label>Status</mat-label>
-        <mat-select [(ngModel)]="task.status">
-          <mat-option value="todo">Todo</mat-option>
-          <mat-option value="inProgress">In Progress</mat-option>
-          <mat-option value="awaitingFeedback">Await Feedback</mat-option>
-          <mat-option value="done">Done</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+    <form [formGroup]="taskForm" (ngSubmit)="saveTask()">
+      <div>
+        <mat-form-field class="mr-16 width-100" appearance="outline">
+          <mat-label>Title</mat-label>
+          <input [disabled]="loading" formControlName="title" matInput placeholder="Title">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="width-100">
+          <mat-label>Description</mat-label>
+          <textarea [disabled]="loading" formControlName="description" matInput placeholder="Description"></textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="width-100">
+          <mat-label>Priority</mat-label>
+          <mat-select formControlName="priority">
+            <mat-option value="low">Low</mat-option>
+            <mat-option value="urgent">Urgent</mat-option>
+            <mat-option value="medium">Medium</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="width-100">
+          <mat-label>Assigned To</mat-label>
+          <mat-select formControlName="assignedTo">
+            <mat-option *ngFor="let customer of allCustomers" [value]="customer.firstName + ' ' + customer.lastName">
+              {{ customer.firstName }} {{ customer.lastName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="width-100">
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status">
+            <mat-option value="todo">Todo</mat-option>
+            <mat-option value="inProgress">In Progress</mat-option>
+            <mat-option value="awaitingFeedback">Await Feedback</mat-option>
+            <mat-option value="done">Done</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <div mat-dialog-actions>
-      <button [disabled]="loading" mat-button (click)="dialogRef.close()" >Cancel</button>
-      <button [disabled]="loading" mat-button (click)="saveTask()" >Save</button>
-
-    </div>
+      <div mat-dialog-actions>
+        <button [disabled]="loading" mat-button (click)="dialogRef.close()" >Cancel</button>
+        <button [disabled]="loading || !taskForm.valid" mat-button type="submit">Save</button>
+      </div>
+    </form>
 
   </div>
 

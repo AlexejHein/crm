@@ -27,11 +27,10 @@
       </mat-form-field>
     </div>
 
-    <div mat-dialog-actions>
+    <div class="action-buttons" mat-dialog-actions>
       <button [disabled]="loading" mat-button (click)="dialogRef.close()" >Cancel</button>
-      <button [disabled]="loading" mat-button color="accent" (click)="saveTask()" >Save</button>
-      <button [disabled]="loading" mat-button color="warn" (click)="deleteTask()" >Delete</button>
-
+      <button [disabled]="loading" mat-mini-fab color="accent" (click)="saveTask()" ><mat-icon>save</mat-icon></button>
+      <button [disabled]="loading" mat-mini-fab color="warn" (click)="deleteTask()" ><mat-icon>delete</mat-icon></button>
     </div>
 
   </div>
