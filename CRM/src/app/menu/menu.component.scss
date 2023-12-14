@@ -8,6 +8,9 @@ mat-toolbar{
   box-shadow:  -7px -7px 5px #ddebeb,
   7px 7px 5px #ffffff;
   //box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+  @media (max-width: 360px) {
+    font-size: 12px;
+  }
   .mat-toolbar-row{
     display: flex;
     flex-direction: row;
