@@ -12,6 +12,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      flex-wrap: wrap;
     }
   }
 
@@ -48,11 +49,12 @@
   }
 
   .add-customer-btn {
-    position: absolute;
+    position: fixed;
     right: 20px;
     bottom: 20px;
     background: linear-gradient(45deg, #2196F3 0%, #21CBF3 100%);
     box-shadow: -3px -3px 5px #ddebeb,
     3px 3px 5px #ffffff;
+    z-index: 2;
   }
 }
