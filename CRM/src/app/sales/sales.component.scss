@@ -13,6 +13,9 @@
     padding: 12px;
     display: flex;
     justify-content: space-between;
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
   }
 
   .product-card {
@@ -23,6 +26,10 @@
     box-shadow: -7px -7px 5px #ddebeb,
     7px 7px 5px #ffffff;
     text-align: center;
+    @media (max-width: 1000px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
 
   .product-card img {

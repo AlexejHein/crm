@@ -32,3 +32,8 @@ mat-card{
 .info{
   max-width: 80%;
 }
+@media (max-width: 650px) {
+  mat-form-field{
+    width: 100%;
+  }
+}

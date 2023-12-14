@@ -39,6 +39,9 @@
     background: #f0ffff;
     box-shadow: -7px -7px 5px #ddebeb,
     7px 7px 5px #ffffff;
+    @media (max-width: 601px) {
+      width: 100%;
+    }
   }
 
   .status-history {
@@ -75,3 +78,16 @@
     background-color: lightcoral;
   }
 }
+@media (max-width: 900px){
+  .none {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .none-600 {
+    display: none;
+  }
+
+}
+
+

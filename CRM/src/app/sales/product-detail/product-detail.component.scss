@@ -4,9 +4,17 @@ mat-card{
   background: #f0ffff;
   box-shadow:  -7px -7px 5px #ddebeb,
   7px 7px 5px #ffffff;
+  @media (max-width: 500px) {
+    font-size: 0.9em;
+    padding: 2px;
+    margin: 6px;
+  }
 }
 .product-accordion {
   margin: 20px;
+  @media (max-width: 500px) {
+    margin: 0;
+  }
 }
 mat-accordion{
   margin: 12px!important;
@@ -19,6 +27,11 @@ mat-accordion{
   border-radius: 5px;
   box-shadow:  -7px -7px 5px #ddebeb,
   7px 7px 5px #ffffff;
+  @media (max-width: 500px) {
+    font-size: 0.9em;
+    padding: 2px;
+    margin: 6px;
+  }
 }
 
 .panel-content {
@@ -30,6 +43,11 @@ mat-accordion{
   background: #f0ffff;
   box-shadow:  -7px -7px 5px #ddebeb,
   7px 7px 5px #ffffff;
+  @media (max-width: 500px) {
+    font-size: 0.9em;
+    padding: 2px;
+    margin: 6px;
+  }
 }
 
 .mat-panel-title {
