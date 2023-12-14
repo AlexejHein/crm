@@ -55,7 +55,10 @@
     align-items: flex-start;
     gap: 20px;
     margin: 20px 0;
-
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: center;
+    }
     mat-card {
       width: 100%;
       padding: 16px;
