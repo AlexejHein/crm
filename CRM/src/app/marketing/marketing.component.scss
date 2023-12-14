@@ -6,6 +6,10 @@
   background: #f0ffff;
   box-shadow:  -7px -7px 5px #ddebeb,
   7px 7px 5px #ffffff;
+  @media (max-width: 800px) {
+    width: 90%;
+    font-size: 0.8em;
+  }
   mat-card {
     margin: 20px;
     padding: 16px;
@@ -13,6 +17,13 @@
     background: #f0ffff;
     box-shadow:  -7px -7px 5px #ddebeb,
     7px 7px 5px #ffffff;
+    @media (max-width: 800px) {
+      width: 90%;
+      font-size: 0.8em;
+    }
+    @media (max-width: 400px) {
+      margin: 5px;
+    }
   }
 
   mat-form-field {
