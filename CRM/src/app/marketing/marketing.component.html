@@ -11,11 +11,10 @@
       ensuring a personal touch in every message sent.
     </mat-card-content>
   </mat-card>
-<mat-tab-group>
 
+<mat-tab-group>
   <mat-tab label="Mailing Lists">
-    <!-- Code for segmenting mailing lists -->
-    <mat-card class="pd-16">
+    <mat-card class="pd-16 zindex">
       <mat-card-title>Mailing List</mat-card-title>
       <br>
       <mat-card-content>
@@ -46,15 +45,12 @@
 
         <mat-card>
           <mat-card-content>
-            <!-- Anzeige des Vorlageninhalts -->
             <p>{{ selectedTemplateContent }}</p>
 
-            <!-- Anzeige der E-Mail-Adresse des Empfängers -->
             <p><strong>Recipient's Email:</strong> {{ recipientEmail }}</p>
           </mat-card-content>
         </mat-card>
 
-        <!-- Schaltflächen -->
         <div class="action-buttons">
           <button mat-button (click)="resetTemplate()">Reset</button>
           <button mat-raised-button color="primary" (click)="sendEmail()">Send Email</button>
@@ -65,7 +61,6 @@
   </mat-tab>
 
   <mat-tab label="Email Templates">
-    <!-- Code for creating and managing email templates -->
     <mat-card class="pd-16">
       <mat-card-title>Create New Email Template</mat-card-title>
       <mat-card-content>

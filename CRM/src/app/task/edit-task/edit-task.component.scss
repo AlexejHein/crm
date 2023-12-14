@@ -1,5 +1,14 @@
 .dialog-container {
   width: 500px;
+  @media (max-width: 800px){
+    width: 400px;
+  }
+  @media (max-width: 600px){
+    width: 300px;
+  }
+  @media (max-width: 400px){
+    width: 250px;
+  }
   .dialog {
     width: 100%;
     color: #949494;
