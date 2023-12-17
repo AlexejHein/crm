@@ -5,7 +5,7 @@ export class Task{
   status?: string;
   customIdName: string;
   assignedTo: string;
-  taskId: any;
+  id?: any;
 
   constructor(obj?: any) {
     this.title = obj ? obj.title : '';

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, ElementRef } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 import { AngularFirestore } from "@angular/fire/compat/firestore";
@@ -11,7 +11,11 @@ import { Lead } from "../models/leads.class";
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements AfterViewInit{
+
+  @ViewChild('customerChartCanvas') customerChartCanvasRef: ElementRef | undefined;
+  @ViewChild('taskChartCanvas') taskChartCanvasRef: ElementRef | undefined;
+
   lead = new Lead();
   task = new Task();
   customer = new Customer();
@@ -23,25 +27,7 @@ export class DashboardComponent {
   public taskChart: any;
 
   constructor(private firestore: AngularFirestore) {
-    this.firestore.collection('customers')
-      .valueChanges({idField: 'customIdName'})
-      .subscribe((changes: any) => {
-        this.allCustomers = changes;
-        this.createCustomerChart();
-      });
 
-    this.firestore.collection('tasks')
-      .valueChanges()
-      .subscribe((changes: any) => {
-        this.allTasks = changes;
-        this.createTaskChart();
-      });
-    this.firestore.collection('leads').valueChanges().subscribe((leads: any[]) => {
-      this.leads = leads.map(lead => ({
-        ...lead,
-        appointmentDate: this.convertToDate(lead.appointmentDate)
-      }));
-    });
   }
   convertToDate(appointmentDate: any): Date | null {
     if (appointmentDate?.toDate) {
@@ -52,10 +38,37 @@ export class DashboardComponent {
     }
     return null;
   }
+
+  ngAfterViewInit(){
+    this.firestore.collection('customers')
+      .valueChanges({idField: 'customIdName'})
+      .subscribe((changes: any) => {
+          this.allCustomers = changes;
+          this.createCustomerChart();
+      });
+
+    this.firestore.collection('tasks')
+      .valueChanges()
+      .subscribe((changes: any) => {
+          this.allTasks = changes;
+          this.createTaskChart();
+      });
+    this.firestore.collection('leads').valueChanges().subscribe((leads: any[]) => {
+      this.leads = leads.map(lead => ({
+        ...lead,
+        appointmentDate: this.convertToDate(lead.appointmentDate)
+      }));
+    });
+  }
   createCustomerChart() {
+
+    if (this.customerChart) {
+      this.customerChart.destroy();
+    }
     const customerNames = this.allCustomers.map(customer => customer.lastName);
     const customerSales = this.allCustomers.map(customer => customer.sales);
-    this.customerChart = new Chart("customerChartCanvas", {
+    const canvas = this.customerChartCanvasRef?.nativeElement;
+    this.customerChart = new Chart(canvas, {
       type: 'bar',
       data: {
         labels: customerNames,
@@ -72,10 +85,14 @@ export class DashboardComponent {
     return this.allTasks.filter(task => task.priority === priority).length;
   }
   createTaskChart() {
+    if (this.taskChart) {
+      this.taskChart.destroy();
+    }
     const lowCount = this.countTasksByPriority('low');
     const mediumCount = this.countTasksByPriority('medium');
     const urgentCount = this.countTasksByPriority('urgent');
-    this.taskChart = new Chart("taskChartCanvas", {
+    const canvas = this.taskChartCanvasRef?.nativeElement;
+    this.taskChart = new Chart( canvas,{
       type: 'doughnut',
       data: {
         labels: ['Low', 'Medium', 'Urgent'],

@@ -14,7 +14,7 @@ import {AddTaskComponent} from "./add-task/add-task.component";
 })
 export class TaskComponent implements OnInit{
   tasks: Task[] = [];
-  taskId: string = '';
+  id: string = '';
 
 
   todo: Task[] = [];
