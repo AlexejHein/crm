@@ -23,7 +23,9 @@
 
     <ng-container matColumnDef="createdAt">
       <th class="none"  mat-header-cell *matHeaderCellDef> Created At </th>
-      <td class="none"  mat-cell *matCellDef="let element"> {{ element.createdAt.toDate() | date:'shortDate' }}</td>
+      <td class="none" mat-cell *matCellDef="let element">
+        {{ element.createdAt?.toDate ? (element.createdAt.toDate() | date:'shortDate') : '' }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="assignedTo">

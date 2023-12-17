@@ -35,9 +35,9 @@ export class DialogAddLeadComponent implements OnInit {
       assignedTo: new FormControl ('', [Validators.required, Validators.minLength(2)]),
       email: new FormControl ('', [Validators.required, Validators.email]),
       phoneNumber: new FormControl ('', [Validators.required, Validators.minLength(5)]),
-      comments: new FormControl ('', [Validators.required, Validators.minLength(2)]),
+      comments: new FormControl (''),
       createdAt: new FormControl ('', [Validators.required]),
-      companyName: new FormControl ('', [Validators.required, Validators.minLength(2)])
+      companyName: new FormControl ('')
     });
   }
   ngOnInit(): void {
