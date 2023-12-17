@@ -41,7 +41,7 @@ export class LoginComponent {
       this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
         .then(() => this.router.navigate(['/dashboard']))
         .catch(err => {
-          this.loginError = err.code === 'auth/user-not-found' ? 'User does not exist.' : 'An error occurred during login.';
+          this.loginError = err.code === 'auth/user-not-found' ? 'User does not exist.' : 'User does not exist.';
         });
     } else {
       this.loginError = 'Please correct the errors in the form.';
