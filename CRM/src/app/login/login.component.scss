@@ -2,8 +2,16 @@
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 40px;
+  .logoCRM {
+    font-size: 100px;
+    font-weight: 900;
+    color: rgba(246, 247, 255, 0.82);
+    text-shadow:  3px 3px 5px #ddebeb, -3px -3px 5px #ffffff;
+  }
   mat-tab-group{
     width: 400px;
     display: flex;
